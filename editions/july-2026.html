@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE CIRCUS — July 2026 Edition</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                border-left: none !important;
+                border-right: none !important;
+            }
+            .content-padding {
+                padding: 15px 20px !important;
+            }
+            .main-title {
+                font-size: 24px !important;
+            }
+            .svg-container {
+                width: 250px !important;
+                height: 250px !important;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .spinning-ring {
+            animation: spin 8s linear infinite;
+            transform-origin: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; background-color: #fff;">
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff;">
+        <tr>
+            <td align="center" style="padding: 20px 0;">
+
+                <table class="email-container" width="600" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff; border: 2px solid #000; max-width: 600px;">
+
+                    <!-- Header with circular ring and curved text -->
+                    <tr>
+                        <td class="content-padding" style="padding: 30px 0; border-bottom: 2px solid #000; text-align: center;">
+                            <svg class="svg-container" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+
+                                <circle cx="150" cy="150" r="140" fill="none" stroke="#000" stroke-width="3"/>
+                                <circle cx="150" cy="150" r="80" fill="none" stroke="#000" stroke-width="2"/>
+                                <circle cx="150" cy="150" r="70" fill="#fff" stroke="none"/>
+
+                                <g class="spinning-ring">
+                                    <defs>
+                                        <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
+                                        <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
+                                    </defs>
+
+                                    <text font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#d32f2f" letter-spacing="1">
+                                        <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
+                                            LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
+                                        </textPath>
+                                    </text>
+
+                                    <text font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#d32f2f" letter-spacing="1">
+                                        <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
+                                            NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
+                                        </textPath>
+                                    </text>
+                                </g>
+
+                                <text class="main-title" x="150" y="145" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">THE</text>
+                                <text class="main-title" x="150" y="170" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">CIRCUS</text>
+
+                            </svg>
+                        </td>
+                    </tr>
+
+                    <!-- Navigation Bar -->
+                    <tr>
+                        <td class="content-padding" style="padding: 10px 30px; border-bottom: 1px solid #000; background-color: #fafafa; text-align: center;">
+                            <a href="../index.html" style="color: #000; font-size: 11px; font-weight: bold; text-decoration: underline; letter-spacing: 1px;">← BACK TO ARCHIVE</a>
+                        </td>
+                    </tr>
+
+                    <!-- Intro -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0; color: #000; font-size: 13px; line-height: 1.8; text-align: center;">Finding the genuinely interesting acts amid all the spectacle. Creating an intentional curation in a sea of noise.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Long Read -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">LONG READ</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                <a href="https://ribbonfarm.com/2015/04/08/the-essence-of-peopling/" style="color: #000; text-decoration: none;">The Essence of Peopling</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A long read on ribbonfarm exploring the concept and dynamics of peopling.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Book -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">BOOK</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                The Coddling of the American Mind
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A great book that explains how the modern society has become too sensitive to basic things like speech.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Watch -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">WATCH</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                <a href="https://www.youtube.com/watch?v=5oqdmZ9pFJg" style="color: #000; text-decoration: none;">Real estate price growth in Croatia</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A video about what’s troubling the young (and the old) in our country. The video is just a summary of the article mentioned and linked in the description of the video. I highly suggest reading the article.</p>
+                        </td>
+                    </tr>
+
+                    <!-- App -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">APP</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                Dictation & Financial Tools: <a href="https://github.com/digimata/parrot/releases" style="color: #000; text-decoration: underline;">Parrot (Mac)</a> & <a href="https://apps.apple.com/hr/app/quartr-financial-research/id1552412128" style="color: #000; text-decoration: underline;">Quartr (iPhone)</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">For the more tech savvy audience, the Mac app is a dictation app available through GitHub. It maps to your fn button and inserts whatever you say to wherever your cursor is. Might sound like it is not useful, but try it.<br><br>The iPhone app is a financial reporting app. If you are ever interested in the financial reports of a company, the app has transcripts, audio, PDFs etc. of the reports. The most useful feature is a calendar of when the reports are coming, so you know when there will be stock movements for a certain company.</p>
+                        </td>
+                    </tr>
+
+                    <!-- News -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">NEWS</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                <a href="https://www.wired.com/story/madison-square-garden-jim-dolan-surveillance-machine/" style="color: #000; text-decoration: none;">Madison Square Garden Surveillance Machine</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">MSG, the most famous sports arena in the US, recently sued “Wired” magazine for its report on the surveillance machine in the arena. Wired decided to remove the paywall so anyone can read about it.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Zagreb -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">ZAGREB</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                <a href="https://www.journal.hr/kultura/film-kazaliste-tv/cinestar-novi-zagreb-obnovljen/" style="color: #000; text-decoration: none;">CineStar Novi Zagreb refresh</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">The forgotten CineStar has been refreshed. I’ve already tested it (watched Spiderman) and the change is noticable. They now have a lot of payment kiosks at the entrance which is a huge plus for me.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Croatia -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">CROATIA</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                <a href="https://www.journal.hr/lifestyle/interijeri/villa-petra-stara-skola-podstrana/" style="color: #000; text-decoration: none;">A school turned into a villa in Podstrana</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">Even though the style of the villa is not what I prefer, I think this project turned out great. Cool idea, good execution.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Tech -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">TECH</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                <a href="https://knockoff.co/?ueid=700e7a19033b3e05077d537e4201fb84&utm_source=Sailthru&utm_medium=email&utm_campaign=2026-07-11%20Installer%20135&utm_term=Installer" style="color: #000; text-decoration: none;">Knockoff Extension</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">This is kind of niche, but things in this category will probably mostly be niche. It’s a browser extension to block the unknown ching chong brands when you’re browsing Amazon.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Misc -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">MISC</p>
+                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
+                                <a href="https://www.webdesignmuseum.org" style="color: #000; text-decoration: none;">Web Design Museum</a>
+                            </h3>
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A VERY cool website. I am not the nostalgic type, but I’m thankful to the people documenting this.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Quote -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">QUOTE</p>
+                            <p style="margin: 8px 0 0 0; color: #000; font-size: 13px; line-height: 1.7; font-style: italic;">
+                                "And I have seen boys like these, younger than these, their arms torn out, their legs ripped off. But there isn't nothin' like the sight of an amputated spirit; there is no prosthetic for that."
+                            </p>
+                            <p style="margin: 5px 0 0 0; color: #666; font-size: 11px; font-weight: bold;">— Scent of a Woman</p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="content-padding" style="padding: 20px 30px; border-top: 2px solid #000; text-align: center;">
+                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.8;">have something cool?<br><span style="color: #d32f2f;">reply to this email</span></p>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
