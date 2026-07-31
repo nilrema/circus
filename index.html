@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsletter</title>
+    <style>
+        /* Responsive styles for mobile devices */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                border-left: none !important;
+                border-right: none !important;
+            }
+            .content-padding {
+                padding: 15px 20px !important;
+            }
+            .main-title {
+                font-size: 24px !important;
+            }
+            /* Make the SVG scalable */
+            .svg-container {
+                width: 250px !important;
+                height: 250px !important;
+            }
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .spinning-ring {
+            animation: spin 8s linear infinite;
+            transform-origin: center;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; background-color: #fff;">
 
@@ -11,27 +46,14 @@
         <tr>
             <td align="center" style="padding: 20px 0;">
 
-                <table width="600" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff; border: 2px solid #000;">
+                <!-- Added class="email-container" for mobile targeting -->
+                <table class="email-container" width="600" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff; border: 2px solid #000; max-width: 600px;">
 
                     <!-- Header with circular ring and curved text -->
                     <tr>
-                        <td style="padding: 30px 0; border-bottom: 2px solid #000; text-align: center;">
-                            <style>
-                                @keyframes spin {
-                                    from {
-                                        transform: rotate(0deg);
-                                    }
-                                    to {
-                                        transform: rotate(360deg);
-                                    }
-                                }
-                                .spinning-ring {
-                                    animation: spin 8s linear infinite;
-                                    transform-origin: center;
-                                    display: inline-block;
-                                }
-                            </style>
-                            <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+                        <td class="content-padding" style="padding: 30px 0; border-bottom: 2px solid #000; text-align: center;">
+                            <!-- Added class="svg-container" for mobile scaling -->
+                            <svg class="svg-container" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
 
                                 <!-- Static outer and inner circles -->
                                 <circle cx="150" cy="150" r="140" fill="none" stroke="#000" stroke-width="3"/>
@@ -62,8 +84,9 @@
                                 </g>
 
                                 <!-- Center text (static, doesn't spin) -->
-                                <text x="150" y="145" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">THE</text>
-                                <text x="150" y="170" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">CIRCUS</text>
+                                <!-- Added class="main-title" for mobile font-size adjustment -->
+                                <text class="main-title" x="150" y="145" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">THE</text>
+                                <text class="main-title" x="150" y="170" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">CIRCUS</text>
 
                             </svg>
                         </td>
@@ -71,14 +94,15 @@
 
                     <!-- Intro -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <!-- Added class="content-padding" to all padding cells for mobile adjustments -->
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0; color: #000; font-size: 13px; line-height: 1.8; text-align: center;">Finding the genuinely interesting acts amid all the spectacle. Creating an intentional curation in a sea of noise.</p>
                         </td>
                     </tr>
 
                     <!-- Long Read -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">LONG READ</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 <a href="https://ribbonfarm.com/2015/04/08/the-essence-of-peopling/" style="color: #000; text-decoration: none;">The Essence of Peopling</a>
@@ -89,7 +113,7 @@
 
                     <!-- Book -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">BOOK</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 The Coddling of the American Mind
@@ -100,7 +124,7 @@
 
                     <!-- Watch -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">WATCH</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 <a href="https://www.youtube.com/watch?v=5oqdmZ9pFJg" style="color: #000; text-decoration: none;">Real estate price growth in Croatia</a>
@@ -111,7 +135,7 @@
 
                     <!-- App -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">APP</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 Dictation & Financial Tools: <a href="https://github.com/digimata/parrot/releases" style="color: #000; text-decoration: underline;">Parrot (Mac)</a> & <a href="https://apps.apple.com/hr/app/quartr-financial-research/id1552412128" style="color: #000; text-decoration: underline;">Quartr (iPhone)</a>
@@ -122,7 +146,7 @@
 
                     <!-- News -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">NEWS</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 <a href="https://www.wired.com/story/madison-square-garden-jim-dolan-surveillance-machine/" style="color: #000; text-decoration: none;">Madison Square Garden Surveillance Machine</a>
@@ -133,7 +157,7 @@
 
                     <!-- Zagreb -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">ZAGREB</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 <a href="https://www.journal.hr/kultura/film-kazaliste-tv/cinestar-novi-zagreb-obnovljen/" style="color: #000; text-decoration: none;">CineStar Novi Zagreb refresh</a>
@@ -144,7 +168,7 @@
 
                     <!-- Croatia -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">CROATIA</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 <a href="https://www.journal.hr/lifestyle/interijeri/villa-petra-stara-skola-podstrana/" style="color: #000; text-decoration: none;">A school turned into a villa in Podstrana</a>
@@ -155,7 +179,7 @@
 
                     <!-- Tech -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">TECH</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 <a href="https://knockoff.co/?ueid=700e7a19033b3e05077d537e4201fb84&utm_source=Sailthru&utm_medium=email&utm_campaign=2026-07-11%20Installer%20135&utm_term=Installer" style="color: #000; text-decoration: none;">Knockoff Extension</a>
@@ -166,7 +190,7 @@
 
                     <!-- Misc -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">MISC</p>
                             <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
                                 <a href="https://www.webdesignmuseum.org" style="color: #000; text-decoration: none;">Web Design Museum</a>
@@ -177,7 +201,7 @@
 
                     <!-- Quote -->
                     <tr>
-                        <td style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
                             <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">QUOTE</p>
                             <p style="margin: 8px 0 0 0; color: #000; font-size: 13px; line-height: 1.7; font-style: italic;">
                                 "And I have seen boys like these, younger than these, their arms torn out, their legs ripped off. But there isn't nothin' like the sight of an amputated spirit; there is no prosthetic for that."
@@ -188,7 +212,7 @@
 
                     <!-- Footer -->
                     <tr>
-                        <td style="padding: 20px 30px; border-top: 2px solid #000; text-align: center;">
+                        <td class="content-padding" style="padding: 20px 30px; border-top: 2px solid #000; text-align: center;">
                             <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.8;">have something cool?<br><span style="color: #d32f2f;">reply to this email</span></p>
                         </td>
                     </tr>
