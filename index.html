@@ -37,6 +37,136 @@
         .edition-link:hover {
             background-color: #f9f9f9;
         }
+
+        /* View toggle */
+        .view-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .view-toggle-btn {
+            background: none;
+            border: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #888;
+            cursor: pointer;
+            padding: 4px 0 6px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .view-toggle-btn:hover {
+            color: #fff;
+        }
+        .view-toggle-btn.active {
+            color: #fff;
+            border-bottom-color: #d32f2f;
+        }
+        .view-toggle-btn:focus-visible {
+            outline: 2px solid #d32f2f;
+            outline-offset: 2px;
+        }
+        .view-toggle-divider {
+            color: #555;
+            font-size: 11px;
+        }
+
+        /* Seal view */
+        .seal-view-wrap {
+            position: relative;
+            padding: 55px 30px 45px;
+        }
+        .seal-spine {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background-color: #000;
+            opacity: 0.15;
+        }
+        .seal-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            margin: 0 auto 60px;
+            max-width: 260px;
+            transition: transform 0.35s ease;
+        }
+        .seal-item:last-child {
+            margin-bottom: 0;
+        }
+        .seal-item:nth-child(odd) {
+            transform: translateX(-30px);
+        }
+        .seal-item:nth-child(even) {
+            transform: translateX(30px);
+        }
+        .seal-item .seal-svg {
+            width: 130px;
+            height: 130px;
+            display: block;
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
+        .seal-item:hover .seal-svg,
+        .seal-item:focus-visible .seal-svg {
+            transform: scale(1.18) rotate(-6deg);
+            filter: drop-shadow(0 0 16px rgba(211, 47, 47, 0.5));
+        }
+        .seal-item:focus-visible {
+            outline: 2px solid #d32f2f;
+            outline-offset: 6px;
+        }
+        .seal-label {
+            margin-top: 16px;
+            text-align: center;
+        }
+        .seal-eyebrow {
+            display: block;
+            color: #d32f2f;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .seal-title {
+            display: block;
+            color: #000;
+            font-size: 13px;
+            font-weight: bold;
+            font-family: Georgia, serif;
+            line-height: 1.4;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .seal-item:nth-child(odd),
+            .seal-item:nth-child(even) {
+                transform: none;
+            }
+            .seal-item .seal-svg {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spinning-ring {
+                animation: none;
+            }
+            .seal-item,
+            .seal-item .seal-svg {
+                transition: none;
+            }
+            .seal-item:hover .seal-svg,
+            .seal-item:focus-visible .seal-svg {
+                transform: none;
+                filter: none;
+            }
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; background-color: #fff;">
@@ -92,60 +222,87 @@
                         </td>
                     </tr>
 
-                    <!-- Section Title -->
+                    <!-- Section Title / View Toggle -->
                     <tr>
-                        <td class="content-padding" style="padding: 15px 30px; background-color: #000; text-align: center;">
-                            <p style="margin: 0; color: #fff; font-size: 12px; font-weight: bold; letter-spacing: 2px;">EDITIONS ARCHIVE</p>
+                        <td style="padding: 0;">
+                            <div style="background-color: #000; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                                <p style="margin: 0; color: #fff; font-size: 12px; font-weight: bold; letter-spacing: 2px;">EDITIONS ARCHIVE</p>
+                                <div class="view-toggle" role="group" aria-label="Switch archive view">
+                                    <button type="button" id="btn-list" class="view-toggle-btn active" onclick="setView('list')">LIST</button>
+                                    <span class="view-toggle-divider">/</span>
+                                    <button type="button" id="btn-seal" class="view-toggle-btn" onclick="setView('seal')">SEALS</button>
+                                </div>
+                            </div>
                         </td>
                     </tr>
 
-                    <!-- Edition 1 -->
-                    <tr class="edition-link">
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td width="80" valign="middle" align="center" style="padding-right: 15px;">
-                                        <svg width="66" height="66" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                    <!-- LIST VIEW -->
+                    <tr>
+                        <td style="padding: 0;">
+                            <div id="list-view">
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                                    <!-- Edition 1 -->
+                                    <tr class="edition-link">
+                                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="80" valign="middle" align="center" style="padding-right: 15px;">
+                                                        <svg width="66" height="66" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                                                            <g transform="translate(500, 500) rotate(228.438)"><g transform="scale(1.2)" opacity="1"><g transform="rotate(0) scale(1)" opacity="1"><path d="M 250 0 C 183.8003474532747 -87.84990610520221, 311.1865039629731 -165.05529783470703, 130.7702709905836 42.48983672655527 C 154.7381002461896 316.4433787017853, 97.06072543780296 179.10720059261934, 202.25424859373686 146.9463130731183 C 200.33448388563568 36.963066605915245, 348.7722400061548 49.37829678199237, 80.82047219021506 111.23983672655527 C -60.81499841004985 346.96084441963615, -26.752794722187986 201.95163208350115, 77.25424859373686 237.76412907378838 C 140.34765659235194 147.65740420199927, 253.1388346994211 244.95106033455028, 8.419446744138054e-15 137.5 C -253.1388346994211 244.95106033455028, -140.3476565923519 147.65740420199933, -77.25424859373683 237.7641290737884 C 26.752794722188014 201.95163208350118, 60.81499841004987 346.96084441963615, -80.82047219021504 111.23983672655527 C -348.7722400061548 49.3782967819924, -200.33448388563565 36.96306660591527, -202.25424859373683 146.94631307311832 C -97.06072543780292 179.10720059261934, -154.73810024618956 316.4433787017853, -130.7702709905836 42.48983672655528 C -311.1865039629731 -165.055297834707, -183.8003474532747 -87.84990610520218, -250 3.061616997868383e-14 C -183.8003474532747 87.84990610520224, -311.1865039629731 165.05529783470706, -130.77027099058364 -42.489836726555254 C -154.73810024618967 -316.4433787017853, -97.06072543780294 -179.1072005926193, -202.25424859373686 -146.94631307311826 C -200.33448388563565 -36.963066605915216, -348.77224000615473 -49.378296781992326, -80.82047219021507 -111.23983672655525 C 60.81499841004981 -346.96084441963615, 26.752794722187957 -201.95163208350115, -77.25424859373689 -237.76412907378838 C -140.34765659235188 -147.6574042019992, -253.13883469942112 -244.95106033455022, -2.525834023241416e-14 -137.5 C 253.13883469942104 -244.95106033455033, 140.34765659235188 -147.65740420199933, 77.2542485937368 -237.7641290737884 C -26.752794722188014 -201.95163208350107, -60.81499841004994 -346.96084441963615, 80.82047219021503 -111.2398367265553 C 348.77224000615473 -49.37829678199247, 200.33448388563565 -36.9630666059153, 202.25424859373683 -146.94631307311835 C 97.0607254378029 -179.10720059261928, 154.73810024618953 -316.4433787017854, 130.7702709905836 -42.4898367265553 C 311.1865039629731 165.05529783470698, 183.8003474532747 87.84990610520221, 250 0 Z" fill="#d32f2f" stroke="#000000" stroke-width="12" stroke-linejoin="round"/></g></g></g>
+                                                        </svg>
+                                                    </td>
+                                                    <td valign="middle">
+                                                        <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">JULY 2026</p>
+                                                        <h3 style="margin: 5px 0 5px 0; color: #000; font-size: 16px; font-weight: bold; font-family: Georgia, serif;">
+                                                            <a href="editions/july-2026.html" style="color: #000; text-decoration: underline;">Edition #01 — Peopling, MSG Surveillance, & Modern Sensitivity</a>
+                                                        </h3>
+                                                        <p style="margin: 0; color: #555; font-size: 12px; line-height: 1.5;">Featuring interesting things across 10 categories.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Future Edition Placeholder Example -->
+                                    <!-- To add a new edition to LIST VIEW: copy the Edition 1 <tr> block above, then:
+                                         1. Update the month, edition number, title, description, and link
+                                         2. Swap the star's fill="#d32f2f" for that issue's color (or paste in an entirely new star path)
+                                         3. Optionally change the rotate(228.438) angle on the outer <g> for a different orientation
+                                         Then add the matching entry to SEAL VIEW below, and to the edition's own Star Seal block. -->
+
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- SEAL VIEW -->
+                    <tr>
+                        <td style="padding: 0;">
+                            <div id="seal-view" style="display: none;">
+                                <div class="seal-view-wrap">
+                                    <div class="seal-spine" aria-hidden="true"></div>
+
+                                    <!-- Edition 1 seal -->
+                                    <a href="editions/july-2026.html" class="seal-item">
+                                        <svg class="seal-svg" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
                                             <g transform="translate(500, 500) rotate(228.438)"><g transform="scale(1.2)" opacity="1"><g transform="rotate(0) scale(1)" opacity="1"><path d="M 250 0 C 183.8003474532747 -87.84990610520221, 311.1865039629731 -165.05529783470703, 130.7702709905836 42.48983672655527 C 154.7381002461896 316.4433787017853, 97.06072543780296 179.10720059261934, 202.25424859373686 146.9463130731183 C 200.33448388563568 36.963066605915245, 348.7722400061548 49.37829678199237, 80.82047219021506 111.23983672655527 C -60.81499841004985 346.96084441963615, -26.752794722187986 201.95163208350115, 77.25424859373686 237.76412907378838 C 140.34765659235194 147.65740420199927, 253.1388346994211 244.95106033455028, 8.419446744138054e-15 137.5 C -253.1388346994211 244.95106033455028, -140.3476565923519 147.65740420199933, -77.25424859373683 237.7641290737884 C 26.752794722188014 201.95163208350118, 60.81499841004987 346.96084441963615, -80.82047219021504 111.23983672655527 C -348.7722400061548 49.3782967819924, -200.33448388563565 36.96306660591527, -202.25424859373683 146.94631307311832 C -97.06072543780292 179.10720059261934, -154.73810024618956 316.4433787017853, -130.7702709905836 42.48983672655528 C -311.1865039629731 -165.055297834707, -183.8003474532747 -87.84990610520218, -250 3.061616997868383e-14 C -183.8003474532747 87.84990610520224, -311.1865039629731 165.05529783470706, -130.77027099058364 -42.489836726555254 C -154.73810024618967 -316.4433787017853, -97.06072543780294 -179.1072005926193, -202.25424859373686 -146.94631307311826 C -200.33448388563565 -36.963066605915216, -348.77224000615473 -49.378296781992326, -80.82047219021507 -111.23983672655525 C 60.81499841004981 -346.96084441963615, 26.752794722187957 -201.95163208350115, -77.25424859373689 -237.76412907378838 C -140.34765659235188 -147.6574042019992, -253.13883469942112 -244.95106033455022, -2.525834023241416e-14 -137.5 C 253.13883469942104 -244.95106033455033, 140.34765659235188 -147.65740420199933, 77.2542485937368 -237.7641290737884 C -26.752794722188014 -201.95163208350107, -60.81499841004994 -346.96084441963615, 80.82047219021503 -111.2398367265553 C 348.77224000615473 -49.37829678199247, 200.33448388563565 -36.9630666059153, 202.25424859373683 -146.94631307311835 C 97.0607254378029 -179.10720059261928, 154.73810024618953 -316.4433787017854, 130.7702709905836 -42.4898367265553 C 311.1865039629731 165.05529783470698, 183.8003474532747 87.84990610520221, 250 0 Z" fill="#d32f2f" stroke="#000000" stroke-width="12" stroke-linejoin="round"/></g></g></g>
                                         </svg>
-                                    </td>
-                                    <td valign="middle">
-                                        <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">JULY 2026</p>
-                                        <h3 style="margin: 5px 0 5px 0; color: #000; font-size: 16px; font-weight: bold; font-family: Georgia, serif;">
-                                            <a href="editions/july-2026.html" style="color: #000; text-decoration: underline;">Edition #01 — Peopling, MSG Surveillance, & Modern Sensitivity</a>
-                                        </h3>
-                                        <p style="margin: 0; color: #555; font-size: 12px; line-height: 1.5;">Featuring interesting things across 10 categories.</p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
+                                        <span class="seal-label">
+                                            <span class="seal-eyebrow">JULY 2026 · No. 01</span>
+                                            <span class="seal-title">Peopling, MSG Surveillance, &amp; Modern Sensitivity</span>
+                                        </span>
+                                    </a>
 
-                    <!-- Future Edition Placeholder Example -->
-                    <!-- To add a new edition: copy the Edition 1 block above, then:
-                         1. Update the month, edition number, title, description, and link
-                         2. Swap the star's fill="#d32f2f" for that issue's color (or paste in an entirely new star path)
-                         3. Optionally change the rotate(228.438) angle on the outer <g> for a different orientation
-                         Do the same three things in the matching editions/[month]-2026.html file's Edition Star Seal block.
-                    <tr class="edition-link">
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td width="80" valign="middle" align="center" style="padding-right: 15px;">
-                                        [PASTE STAR SVG HERE, 66x66, unique fill color]
-                                    </td>
-                                    <td valign="middle">
-                                        <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">AUGUST 2026</p>
-                                        <h3 style="margin: 5px 0 5px 0; color: #000; font-size: 16px; font-weight: bold; font-family: Georgia, serif;">
-                                            <a href="editions/august-2026.html" style="color: #000; text-decoration: underline;">Edition #02 — Title Here</a>
-                                        </h3>
-                                        <p style="margin: 0; color: #555; font-size: 12px; line-height: 1.5;">Short description here...</p>
-                                    </td>
-                                </tr>
-                            </table>
+                                    <!-- To add a new edition to SEAL VIEW: copy the <a class="seal-item"> block above, then:
+                                         1. Update the href, month/number eyebrow, and title
+                                         2. Swap the star's fill="#d32f2f" for that issue's color (or paste in a new star path)
+                                         3. Left/right offset alternates automatically per position — no manual work needed -->
+
+                                </div>
+                            </div>
                         </td>
                     </tr>
-                    -->
 
                     <!-- Footer -->
                     <tr>
@@ -162,6 +319,44 @@
             </td>
         </tr>
     </table>
+
+    <script>
+        function setView(view) {
+            var listView = document.getElementById('list-view');
+            var sealView = document.getElementById('seal-view');
+            var btnList = document.getElementById('btn-list');
+            var btnSeal = document.getElementById('btn-seal');
+
+            if (view === 'seal') {
+                listView.style.display = 'none';
+                sealView.style.display = 'block';
+                btnSeal.classList.add('active');
+                btnList.classList.remove('active');
+            } else {
+                view = 'list';
+                sealView.style.display = 'none';
+                listView.style.display = 'block';
+                btnList.classList.add('active');
+                btnSeal.classList.remove('active');
+            }
+
+            try {
+                localStorage.setItem('circus-view', view);
+            } catch (e) {
+                /* localStorage unavailable — view still switches, just won't persist */
+            }
+        }
+
+        (function () {
+            var saved = 'list';
+            try {
+                saved = localStorage.getItem('circus-view') || 'list';
+            } catch (e) {
+                /* fall back to default */
+            }
+            setView(saved);
+        })();
+    </script>
 
 </body>
 </html>
