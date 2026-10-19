@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <style>
+        .ring { stroke: #000; }
+        .letter { fill: #000; }
+        @media (prefers-color-scheme: dark) {
+            .ring { stroke: #f0f0f0; }
+            .letter { fill: #f0f0f0; }
+        }
+    </style>
+    <circle class="ring" cx="32" cy="32" r="29" fill="none" stroke-width="4"/>
+    <circle cx="32" cy="32" r="23" fill="none" stroke="#d32f2f" stroke-width="2"/>
+    <text class="letter" x="32" y="43" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="bold">C</text>
+</svg>

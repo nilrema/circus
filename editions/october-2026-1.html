@@ -3,267 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE CIRCUS — October 2026 Edition</title>
-    <style>
-        @media only screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                border-left: none !important;
-                border-right: none !important;
-            }
-            .content-padding {
-                padding: 15px 20px !important;
-            }
-            .main-title {
-                font-size: 24px !important;
-            }
-            .svg-container {
-                width: 250px !important;
-                height: 250px !important;
-            }
-        }
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            var mode = 'system';
+            try { mode = localStorage.getItem('circus-theme') || 'system'; } catch (e) {}
+            var dark = mode === 'dark' ||
+                (mode === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            d.setAttribute('data-theme', dark ? 'dark' : 'light');
+            d.setAttribute('data-theme-mode', mode);
+            window.setTimeout(function () {
+                if (!d.hasAttribute('data-js-ready')) { d.classList.remove('js'); }
+            }, 2000);
+        })();
+    </script>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
+    <title>#05 — High Agency, Basic Economics &amp; Maksimir — The Circus</title>
+    <meta name="description" content="October 2026 edition of The Circus: High Agency, Basic Economics &amp; Maksimir. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/styles.css?v=20261020c">
+    <script src="../assets/site.js?v=20261020c" defer></script>
 
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .spinning-ring {
-            animation: spin 8s linear infinite;
-            transform-origin: center;
-            display: inline-block;
-        }
-    
-        /* Dark Mode (automatic system preference) */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #0e0e0e !important;
-                color: #e6e6e6 !important;
-            }
-            table, td {
-                background-color: #0e0e0e !important;
-                color: #e6e6e6 !important;
-                border-color: #262626 !important;
-            }
-            .email-container {
-                background-color: #141414 !important;
-                border-color: #2e2e2e !important;
-            }
-            .email-container table,
-            .email-container td {
-                background-color: #141414 !important;
-                border-color: #262626 !important;
-            }
-            p {
-                color: #e6e6e6 !important;
-            }
-            p[style*="color: #555"],
-            p[style*="color: #666"],
-            p[style*="color: #444"] {
-                color: #9a9a9a !important;
-            }
-            p[style*="color: #d32f2f"],
-            span[style*="color: #d32f2f"] {
-                color: #ff5252 !important;
-            }
-            h3, h3 a, a {
-                color: #f0f0f0 !important;
-            }
-            /* Spinning circular header in dark mode */
-            .svg-container circle[stroke="#000"] {
-                stroke: #e6e6e6 !important;
-            }
-            .svg-container circle[fill="#fff"] {
-                fill: #141414 !important;
-            }
-            .svg-container .main-title {
-                fill: #f0f0f0 !important;
-            }
-            .svg-container textPath {
-                fill: #ff5252 !important;
-            }
-            /* Back to archive navigation bar */
-            td[style*="background-color: #fafafa"],
-            td[style*="background-color: #f9f9f9"] {
-                background-color: #1a1a1a !important;
-            }
-            td[style*="background-color: #fafafa"] a,
-            td[style*="background-color: #f9f9f9"] a {
-                color: #e6e6e6 !important;
-            }
-        }
-    </style>
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="The Circus">
+    <meta property="og:title" content="#05 — High Agency, Basic Economics &amp; Maksimir">
+    <meta property="og:description" content="October 2026 edition of The Circus: High Agency, Basic Economics &amp; Maksimir. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="#05 — High Agency, Basic Economics &amp; Maksimir">
+    <meta name="twitter:description" content="October 2026 edition of The Circus: High Agency, Basic Economics &amp; Maksimir. Long reads, books, films, apps, tech, and Zagreb finds.">
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; background-color: #fff;">
+<body>
 
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff;">
-        <tr>
-            <td align="center" style="padding: 20px 0;">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-                <table class="email-container" width="600" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff; border: 2px solid #000; max-width: 600px;">
+    <svg class="seal-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="seal-october" viewBox="0 0 1000 1000"><g transform="translate(500, 500) rotate(111.654)"><g transform="scale(1.38)"><g transform="rotate(0) scale(1)"><path d="M 230 0 C 150.2375412639114 -109.78360613668035, 343.6943903046455 -79.68565559639953, 120.30864931133694 39.09064978843085 C 231.21654944897355 266.4855435021201, 57.01553944498556 177.12421416394915, 186.07390870623792 135.1906080272688 C 186.0739087062379 -0.50939197273118, 324.8926558066152 137.55144433132742, 74.35483441499785 102.34064978843087 C 30.421845465264425 351.49701130051955, -57.98446055501441 176.80939261120494, 71.07390870623792 218.7429987478853 C 150.8363674423265 108.95939261120493, 181.99296948567877 302.24856772612634, 7.745891004607009e-15 126.50000000000001 C -181.9929694856788 302.24856772612634, -150.8363674423265 108.95939261120498, -71.07390870623789 218.74299874788534 C 57.98446055501444 176.80939261120494, -30.42184546526444 351.49701130051955, -74.35483441499784 102.34064978843087 C -324.89265580661515 137.5514443313274, -186.0739087062379 -0.5093919727311516, -186.0739087062379 135.19060802726884 C -57.015539444985535 177.12421416394915, -231.21654944897358 266.48554350212015, -120.30864931133694 39.090649788430866 C -343.6943903046455 -79.68565559639954, -150.2375412639114 -109.78360613668033, -230 2.8166876380389125e-14 C -150.23754126391137 109.78360613668036, -343.6943903046455 79.68565559639961, -120.30864931133695 -39.09064978843084 C -231.21654944897364 -266.4855435021201, -57.01553944498559 -177.12421416394918, -186.07390870623792 -135.1906080272688 C -186.0739087062379 0.50939197273118, -324.8926558066152 -137.55144433132733, -74.35483441499787 -102.34064978843085 C -30.42184546526458 -351.49701130051955, 57.98446055501438 -176.80939261120494, -71.07390870623794 -218.7429987478853 C -150.8363674423265 -108.95939261120492, -181.99296948567886 -302.2485677261263, -2.323767301382103e-14 -126.50000000000001 C 181.99296948567866 -302.2485677261264, 150.83636744232646 -108.95939261120498, 71.07390870623786 -218.74299874788534 C -57.98446055501444 -176.80939261120494, 30.42184546526446 -351.49701130051955, 74.35483441499784 -102.34064978843088 C 324.89265580661515 -137.55144433132756, 186.0739087062379 0.5093919727311231, 186.0739087062379 -135.19060802726887 C 57.015539444985535 -177.12421416394918, 231.21654944897352 -266.4855435021202, 120.30864931133694 -39.09064978843089 C 343.69439030464554 79.68565559639939, 150.2375412639114 109.78360613668035, 230 0 Z"/></g></g></g></symbol>
+</svg>
 
-                    <!-- Header with circular ring and curved text -->
-                    <tr>
-                        <td class="content-padding" style="padding: 30px 0; border-bottom: 2px solid #000; text-align: center;">
-                            <svg class="svg-container" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+    <div class="page">
+        <div class="container">
 
-                                <circle cx="150" cy="150" r="140" fill="none" stroke="#000" stroke-width="3"/>
-                                <circle cx="150" cy="150" r="80" fill="none" stroke="#000" stroke-width="2"/>
-                                <circle cx="150" cy="150" r="70" fill="#fff" stroke="none"/>
+            <header class="masthead">
+                <svg class="masthead-svg" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <circle class="masthead-ring" cx="150" cy="150" r="140" stroke-width="3"/>
+                    <circle class="masthead-ring masthead-ring--inner" cx="150" cy="150" r="80" stroke-width="2"/>
+                    <circle class="masthead-disc" cx="150" cy="150" r="70"/>
 
-                                <g class="spinning-ring">
-                                    <defs>
-                                        <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
-                                        <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
-                                    </defs>
+                    <g class="spinning-ring">
+                        <defs>
+                            <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
+                            <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
+                        </defs>
 
-                                    <text font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#d32f2f" letter-spacing="1">
-                                        <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
-                                            LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
-                                        </textPath>
-                                    </text>
+                        <text class="masthead-arc">
+                            <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
+                                LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
+                            </textPath>
+                        </text>
 
-                                    <text font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#d32f2f" letter-spacing="1">
-                                        <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
-                                            NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
-                                        </textPath>
-                                    </text>
-                                </g>
+                        <text class="masthead-arc">
+                            <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
+                                NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
+                            </textPath>
+                        </text>
+                    </g>
 
-                                <text class="main-title" x="150" y="145" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">THE</text>
-                                <text class="main-title" x="150" y="170" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">CIRCUS</text>
+                    <g class="wordmark">
+                        <text class="masthead-word" x="150" y="145" text-anchor="middle">THE</text>
+                        <text class="masthead-word" x="150" y="170" text-anchor="middle">CIRCUS</text>
+                    </g>
+                </svg>
+            </header>
 
-                            </svg>
-                        </td>
-                    </tr>
+            <h1 class="visually-hidden">The Circus — #05 — High Agency, Basic Economics &amp; Maksimir</h1>
 
-                    <!-- Edition Seal -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 0 15px 0; border-bottom: 2px solid #000; text-align: center;">
-                            <img src="../assets/CircusSeals/star-5.svg" width="90" height="90" alt="October 2026 edition seal" style="display: block; margin: 0 auto;">
-                            <p style="margin: 8px 0 0 0; color: #000; font-size: 10px; font-weight: bold; letter-spacing: 2px;">EDITION No. 05 · OCTOBER 1</p>
-                        </td>
-                    </tr>
+            <main id="main">
 
-                    <!-- Navigation Bar -->
-                    <tr>
-                        <td class="content-padding" style="padding: 10px 30px; border-bottom: 1px solid #000; background-color: #fafafa; text-align: center;">
-                            <a href="../index.html" style="color: #000; font-size: 11px; font-weight: bold; text-decoration: underline; letter-spacing: 1px;">← BACK TO ARCHIVE</a>
-                        </td>
-                    </tr>
+                <div class="edition-mark">
+                    <svg class="seal-svg" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+                    <use href="#seal-october"></use>
+                    </svg>
+                    <p class="edition-number">EDITION No. 05 · OCTOBER 1</p>
+                </div>
 
-                    <!-- Intro -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0; color: #000; font-size: 13px; line-height: 1.8; text-align: center;">October is here. Sorry for the late mid-month release, work was hectic and now I am in Milano.</p>
-                        </td>
-                    </tr>
+                <nav class="back-bar" aria-label="Edition navigation">
+                    <a href="../index.html">← BACK TO ARCHIVE</a>
+                    <div class="archive-tools">
+                        <button type="button" class="bar-btn" data-search-open aria-haspopup="dialog">SEARCH <kbd>/</kbd></button>
+                        <button type="button" class="bar-btn" data-theme-toggle aria-label="Colour theme: auto">AUTO</button>
+                    </div>
+                </nav>
+                <nav class="edition-nav" data-edition-nav aria-label="Other editions"></nav>
 
-                    <!-- Long Read -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">LONG READ</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://www.highagency.com/" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">High Agency</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A deep dive into high agency — the refusal to accept constraints as given and the drive to bend reality to achieve what matters.</p>
-                        </td>
-                    </tr>
+                <div class="lede">
+                    <p>October is here. Sorry for the late mid-month release, work was hectic and now I am in Milano.</p>
+                </div>
 
-                    <!-- Book Read -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">BOOK READ</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://www.goodreads.com/book/show/3023.Basic_Economics" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Basic Economics — Thomas Sowell</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A citizen's guide to how economies really work, completely free of jargon and graphs, good reading for understanding human incentives and unintended consequences.</p>
-                        </td>
-                    </tr>
+        <section class="section reveal">
+            <p class="eyebrow">LONG READ</p>
+            <h2 class="section-title"><a href="https://www.highagency.com/" rel="noopener noreferrer" target="_blank">High Agency</a></h2>
+            <p class="copy">A deep dive into high agency — the refusal to accept constraints as given and the drive to bend reality to achieve what matters.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">BOOK READ</p>
+            <h2 class="section-title"><a href="https://www.goodreads.com/book/show/3023.Basic_Economics" rel="noopener noreferrer" target="_blank">Basic Economics — Thomas Sowell</a></h2>
+            <p class="copy">A citizen's guide to how economies really work, completely free of jargon and graphs, good reading for understanding human incentives and unintended consequences.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">WATCH</p>
+            <h2 class="section-title"><a href="https://youtu.be/KHd-luu3M8s?si=fVmqfeRU3wBIVyi8&amp;t=18" rel="noopener noreferrer" target="_blank">The influence of your phone addiction</a></h2>
+            <p class="copy">Listen to how addicted you are to your screen (ironically, while watching on your screen).Other than the fact that this topic is extremely important and awareness should be raised, this guy is just very easy to listen to and follow.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">APP · MAC / IPHONE</p>
+            <h2 class="section-title">PlainWalk (iPhone) &amp; Unwall (Mac)</h2>
+            <p class="copy">iPhone: <a href="https://plainwalk.app/en/" rel="noopener noreferrer" target="_blank">PlainWalk</a>. Mac: <a href="https://unwall.app/" rel="noopener noreferrer" target="_blank">Unwall</a>. PlainWalk is a clean, Japanese-designed walking tracker that turns simple daily steps into a little doodle of a map (and animates it for you). For Mac, I will cheekely pass a webpage this time. Unwall is a lightweight web tool to get past paywall on sites such as Medium, NYT, and such.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">NEWS</p>
+            <h2 class="section-title"><a href="https://interestingengineering.com/space/worlds-most-powerful-rocket-reaches-orbit-deploys-26-starlink-v3-satellites" rel="noopener noreferrer" target="_blank">World's Most Powerful Rocket Reaches Orbit</a></h2>
+            <p class="copy">Starship reaches orbit for the first time!!!!! (and deploys 26 Starlink V3 satellites so the internet on Lošinj can be better)</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">ZAGREB</p>
+            <h2 class="section-title"><a href="https://baustela.hr/novosti/vijesti/87766/dosli-smo-do-pdf-ova-koje-javnost-nije-mogla-procitati-evo-sto-se-zapravo-krije-u-projektu-novog-maksimira/vijest" rel="noopener noreferrer" target="_blank">Što se zapravo krije u projektu novog Maksimira</a></h2>
+            <p class="copy">Links to literal architectural blueprints for the future Maksimir stadium. The inside seems much better than the outer (ugly) shell.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">CROATIA</p>
+            <h2 class="section-title"><a href="https://www.pokazatelji.hr/tema/nekretnine-i-gradevinarstvo" rel="noopener noreferrer" target="_blank">Nekretnine i građevinarstvo u Hrvatskoj</a></h2>
+            <p class="copy">A (really) detailed overview of the real estate and construction sector in Croatia.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">TECH</p>
+            <h2 class="section-title"><a href="https://revolutionarygis.wordpress.com/" rel="noopener noreferrer" target="_blank">A dataset of datasets</a></h2>
+            <p class="copy">A guy has been maintaining a blog of datasets on spatial analysis, digital mapping, and open-source geospatial tools. Years and years and years of data. Since anyone can do basic analysis with AI today, play around a bit.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">MISC</p>
+            <h2 class="section-title"><a href="https://expression.fire.org/p/bury-the-words-are-violence-cliche" rel="noopener noreferrer" target="_blank">Bury the 'Words Are Violence' Cliché</a></h2>
+            <p class="copy">An essay arguing against conflating speech with physical harm. Free speech should always be defended. (also have a look into what the FIRE organization does in general.)</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">QUOTE</p>
+            <blockquote class="quote"><p>“If something burns your soul with purpose and desire, it's your duty to be reduced to ashes by it. Any other form of existence will be yet another dull book in the library of life.”</p></blockquote>
+            <p class="quote-attribution">— Charles Bukowski</p>
+        </section>
 
-                    <!-- Watch -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">WATCH</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://youtu.be/KHd-luu3M8s?si=fVmqfeRU3wBIVyi8&t=18" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">The influence of your phone addiction</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">Listen to how addicted you are to your screen (ironically, while watching on your screen).Other than the fact that this topic is extremely important and awareness should be raised, this guy is just very easy to listen to and follow.</p>
-                        </td>
-                    </tr>
+            </main>
 
-                    <!-- App · Mac / iPhone -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">APP · MAC / IPHONE</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">PlainWalk (iPhone) &amp; Unwall (Mac)</h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">iPhone: <a href="https://plainwalk.app/en/" style="color: #000; text-decoration: underline;" target="_blank" rel="noopener noreferrer">PlainWalk</a>. Mac: <a href="https://unwall.app/" style="color: #000; text-decoration: underline;" target="_blank" rel="noopener noreferrer">Unwall</a>. PlainWalk is a clean, Japanese-designed walking tracker that turns simple daily steps into a little doodle of a map (and animates it for you). For Mac, I will cheekely pass a webpage this time. Unwall is a lightweight web tool to get past paywall on sites such as Medium, NYT, and such.</p>
-                        </td>
-                    </tr>
+            <footer class="site-footer">
+                <p>
+                    have something cool? send me a text <br/><span class="accent">stay hungry, stay foolish</span>
+                </p>
+            </footer>
 
-                    <!-- News -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">NEWS</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://interestingengineering.com/space/worlds-most-powerful-rocket-reaches-orbit-deploys-26-starlink-v3-satellites" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">World's Most Powerful Rocket Reaches Orbit</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">Starship reaches orbit for the first time!!!!! (and deploys 26 Starlink V3 satellites so the internet on Lošinj can be better) </p>
-                        </td>
-                    </tr>
-
-                    <!-- Zagreb -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">ZAGREB</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://baustela.hr/novosti/vijesti/87766/dosli-smo-do-pdf-ova-koje-javnost-nije-mogla-procitati-evo-sto-se-zapravo-krije-u-projektu-novog-maksimira/vijest" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Što se zapravo krije u projektu novog Maksimira</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">Links to literal architectural blueprints for the future Maksimir stadium. The inside seems much better than the outer (ugly) shell.</p>
-                        </td>
-                    </tr>
-
-                    <!-- Croatia -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">CROATIA</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://www.pokazatelji.hr/tema/nekretnine-i-gradevinarstvo" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Nekretnine i građevinarstvo u Hrvatskoj</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A (really) detailed overview of the real estate and construction sector in Croatia.</p>
-                        </td>
-                    </tr>
-
-                    <!-- Tech -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">TECH</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://revolutionarygis.wordpress.com/" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">A dataset of datasets</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A guy has been maintaining a blog of datasets on spatial analysis, digital mapping, and open-source geospatial tools. Years and years and years of data. Since anyone can do basic analysis with AI today, play around a bit.</p>
-                        </td>
-                    </tr>
-
-                    <!-- Misc -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">MISC</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;"><a href="https://expression.fire.org/p/bury-the-words-are-violence-cliche" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Bury the 'Words Are Violence' Cliché</a></h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">An essay arguing against conflating speech with physical harm. Free speech should always be defended. (also have a look into what the FIRE organization does in general.)</p>
-                        </td>
-                    </tr>
-
-                    <!-- Quote -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">QUOTE</p>
-                            <p style="margin: 8px 0 0 0; color: #000; font-size: 12px; line-height: 1.7; font-style: italic;">“If something burns your soul with purpose and desire, it's your duty to be reduced to ashes by it. Any other form of existence will be yet another dull book in the library of life.”</p>
-                            <p style="margin: 5px 0 0 0; color: #666; font-size: 11px; font-weight: bold;">— Charles Bukowski</p>
-                        </td>
-                    </tr>
-
-                    <!-- Footer -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-top: 2px solid #000; text-align: center;">
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.8;">have something cool? send me a text <br><span style="color: #d32f2f;">stay hungry, stay foolish</span></p>
-                        </td>
-                    </tr>
-
-                </table>
-
-            </td>
-        </tr>
-    </table>
+        </div>
+    </div>
 
 </body>
 </html>

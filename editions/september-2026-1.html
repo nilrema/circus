@@ -3,288 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE CIRCUS — September 2026 Edition</title>
-    <style>
-        @media only screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                border-left: none !important;
-                border-right: none !important;
-            }
-            .content-padding {
-                padding: 15px 20px !important;
-            }
-            .main-title {
-                font-size: 24px !important;
-            }
-            .svg-container {
-                width: 250px !important;
-                height: 250px !important;
-            }
-        }
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            var mode = 'system';
+            try { mode = localStorage.getItem('circus-theme') || 'system'; } catch (e) {}
+            var dark = mode === 'dark' ||
+                (mode === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            d.setAttribute('data-theme', dark ? 'dark' : 'light');
+            d.setAttribute('data-theme-mode', mode);
+            window.setTimeout(function () {
+                if (!d.hasAttribute('data-js-ready')) { d.classList.remove('js'); }
+            }, 2000);
+        })();
+    </script>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
+    <title>#03 — Adler, movie maps and a very cool restaurant. — The Circus</title>
+    <meta name="description" content="September 2026 edition of The Circus: #03 — Adler, movie maps and a very cool restaurant. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/styles.css?v=20261020c">
+    <script src="../assets/site.js?v=20261020c" defer></script>
 
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .spinning-ring {
-            animation: spin 8s linear infinite;
-            transform-origin: center;
-            display: inline-block;
-        }
-    
-        /* Dark Mode (automatic system preference) */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #0e0e0e !important;
-                color: #e6e6e6 !important;
-            }
-            table, td {
-                background-color: #0e0e0e !important;
-                color: #e6e6e6 !important;
-                border-color: #262626 !important;
-            }
-            .email-container {
-                background-color: #141414 !important;
-                border-color: #2e2e2e !important;
-            }
-            .email-container table,
-            .email-container td {
-                background-color: #141414 !important;
-                border-color: #262626 !important;
-            }
-            p {
-                color: #e6e6e6 !important;
-            }
-            p[style*="color: #555"],
-            p[style*="color: #666"],
-            p[style*="color: #444"] {
-                color: #9a9a9a !important;
-            }
-            p[style*="color: #d32f2f"],
-            span[style*="color: #d32f2f"] {
-                color: #ff5252 !important;
-            }
-            h3, h3 a, a {
-                color: #f0f0f0 !important;
-            }
-            /* Spinning circular header in dark mode */
-            .svg-container circle[stroke="#000"] {
-                stroke: #e6e6e6 !important;
-            }
-            .svg-container circle[fill="#fff"] {
-                fill: #141414 !important;
-            }
-            .svg-container .main-title {
-                fill: #f0f0f0 !important;
-            }
-            .svg-container textPath {
-                fill: #ff5252 !important;
-            }
-            /* Back to archive navigation bar */
-            td[style*="background-color: #fafafa"],
-            td[style*="background-color: #f9f9f9"] {
-                background-color: #1a1a1a !important;
-            }
-            td[style*="background-color: #fafafa"] a,
-            td[style*="background-color: #f9f9f9"] a {
-                color: #e6e6e6 !important;
-            }
-        }
-    </style>
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="The Circus">
+    <meta property="og:title" content="#03 — Adler, movie maps and a very cool restaurant.">
+    <meta property="og:description" content="September 2026 edition of The Circus: #03 — Adler, movie maps and a very cool restaurant. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="#03 — Adler, movie maps and a very cool restaurant.">
+    <meta name="twitter:description" content="September 2026 edition of The Circus: #03 — Adler, movie maps and a very cool restaurant. Long reads, books, films, apps, tech, and Zagreb finds.">
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; background-color: #fff;">
+<body>
 
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff;">
-        <tr>
-            <td align="center" style="padding: 20px 0;">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-                <table class="email-container" width="600" border="0" cellpadding="0" cellspacing="0" style="background-color: #fff; border: 2px solid #000; max-width: 600px;">
+    <svg class="seal-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="seal-september-1" viewBox="0 0 1000 1000"><g transform="translate(500, 500) rotate(61.866)"><g transform="scale(1.2)"><g transform="rotate(0) scale(1)"><path d="M 250 0 C 389.33965477701145 -125.4619886922859, 51.73605808091618 49.17730348712577, 23.776412907378838 7.7254248593736845 C 70.76104394667425 -9.375582306909752, 241.23769062206676 330.3489882107068, 202.25424859373686 146.9463130731183 C 388.7271039752881 127.34722621043328, 12.949656472186781 70.19496621032847, 14.694631307311829 20.225424859373685 C 62.757716104227775 34.00729265022364, 0.9911280170243373 409.0539023817761, 77.25424859373686 237.76412907378838 C 239.6340118033191 331.51412907378835, -30.783073766282914 64.4005376803361, 1.5308084989341915e-15 25 C 30.78307376628292 64.4005376803361, -239.6340118033191 331.51412907378835, -77.25424859373683 237.7641290737884 C -0.9911280170242946 409.0539023817761, -62.757716104227754 34.00729265022367, -14.694631307311825 20.225424859373685 C -12.949656472186781 70.19496621032847, -388.72710397528806 127.34722621043323, -202.25424859373683 146.94631307311832 C -241.23769062206654 330.3489882107069, -70.76104394667426 -9.37558230690972, -23.776412907378838 7.725424859373688 C -51.736058080916195 49.17730348712576, -389.3396547770114 -125.46198869228593, -250 3.061616997868383e-14 C -389.33965477701133 125.46198869228607, -51.7360580809162 -49.177303487125755, -23.77641290737884 -7.725424859373682 C -70.76104394667426 9.375582306909742, -241.23769062206668 -330.3489882107068, -202.25424859373686 -146.94631307311826 C -388.7271039752881 -127.34722621043306, -12.949656472186811 -70.19496621032846, -14.69463130731183 -20.225424859373682 C -62.75771610422777 -34.007292650223654, -0.9911280170243231 -409.053902381776, -77.25424859373689 -237.76412907378838 C -239.63401180331923 -331.51412907378824, 30.78307376628289 -64.40053768033611, -4.592425496802574e-15 -25 C -30.783073766282907 -64.4005376803361, 239.63401180331905 -331.5141290737884, 77.2542485937368 -237.7641290737884 C 0.9911280170240815 -409.05390238177597, 62.757716104227754 -34.007292650223675, 14.694631307311823 -20.22542485937369 C 12.949656472186785 -70.19496621032847, 388.72710397528806 -127.34722621043332, 202.25424859373683 -146.94631307311835 C 241.2376906220665 -330.3489882107069, 70.76104394667426 9.375582306909713, 23.776412907378838 -7.725424859373692 C 51.73605808091619 -49.17730348712577, 389.33965477701145 125.4619886922859, 250 0 Z"/></g></g></g></symbol>
+</svg>
 
-                    <!-- Header with circular ring and curved text -->
-                    <tr>
-                        <td class="content-padding" style="padding: 30px 0; border-bottom: 2px solid #000; text-align: center;">
-                            <svg class="svg-container" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
+    <div class="page">
+        <div class="container">
 
-                                <circle cx="150" cy="150" r="140" fill="none" stroke="#000" stroke-width="3"/>
-                                <circle cx="150" cy="150" r="80" fill="none" stroke="#000" stroke-width="2"/>
-                                <circle cx="150" cy="150" r="70" fill="#fff" stroke="none"/>
+            <header class="masthead">
+                <svg class="masthead-svg" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <circle class="masthead-ring" cx="150" cy="150" r="140" stroke-width="3"/>
+                    <circle class="masthead-ring masthead-ring--inner" cx="150" cy="150" r="80" stroke-width="2"/>
+                    <circle class="masthead-disc" cx="150" cy="150" r="70"/>
 
-                                <g class="spinning-ring">
-                                    <defs>
-                                        <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
-                                        <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
-                                    </defs>
+                    <g class="spinning-ring">
+                        <defs>
+                            <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
+                            <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
+                        </defs>
 
-                                    <text font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#d32f2f" letter-spacing="1">
-                                        <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
-                                            LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
-                                        </textPath>
-                                    </text>
+                        <text class="masthead-arc">
+                            <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
+                                LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
+                            </textPath>
+                        </text>
 
-                                    <text font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" fill="#d32f2f" letter-spacing="1">
-                                        <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
-                                            NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
-                                        </textPath>
-                                    </text>
-                                </g>
+                        <text class="masthead-arc">
+                            <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
+                                NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
+                            </textPath>
+                        </text>
+                    </g>
 
-                                <text class="main-title" x="150" y="145" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">THE</text>
-                                <text class="main-title" x="150" y="170" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#000">CIRCUS</text>
+                    <g class="wordmark">
+                        <text class="masthead-word" x="150" y="145" text-anchor="middle">THE</text>
+                        <text class="masthead-word" x="150" y="170" text-anchor="middle">CIRCUS</text>
+                    </g>
+                </svg>
+            </header>
 
-                            </svg>
-                        </td>
-                    </tr>
+            <h1 class="visually-hidden">The Circus — #03 — Adler, movie maps and a very cool restaurant.</h1>
 
-                    <!-- Edition Seal -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 0 15px 0; border-bottom: 2px solid #000; text-align: center;">
-                            <svg width="90" height="90" style="display: block; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" id="star-svg" viewBox="0 0 1000 1000" class="_svg_15f9g_10"><g transform="translate(500, 500) rotate(61.866)"><g transform="scale(1.2)" opacity="1"><g transform="rotate(0) scale(1)" opacity="1"><path d="M 250 0 C 389.33965477701145 -125.4619886922859, 51.73605808091618 49.17730348712577, 23.776412907378838 7.7254248593736845 C 70.76104394667425 -9.375582306909752, 241.23769062206676 330.3489882107068, 202.25424859373686 146.9463130731183 C 388.7271039752881 127.34722621043328, 12.949656472186781 70.19496621032847, 14.694631307311829 20.225424859373685 C 62.757716104227775 34.00729265022364, 0.9911280170243373 409.0539023817761, 77.25424859373686 237.76412907378838 C 239.6340118033191 331.51412907378835, -30.783073766282914 64.4005376803361, 1.5308084989341915e-15 25 C 30.78307376628292 64.4005376803361, -239.6340118033191 331.51412907378835, -77.25424859373683 237.7641290737884 C -0.9911280170242946 409.0539023817761, -62.757716104227754 34.00729265022367, -14.694631307311825 20.225424859373685 C -12.949656472186781 70.19496621032847, -388.72710397528806 127.34722621043323, -202.25424859373683 146.94631307311832 C -241.23769062206654 330.3489882107069, -70.76104394667426 -9.37558230690972, -23.776412907378838 7.725424859373688 C -51.736058080916195 49.17730348712576, -389.3396547770114 -125.46198869228593, -250 3.061616997868383e-14 C -389.33965477701133 125.46198869228607, -51.7360580809162 -49.177303487125755, -23.77641290737884 -7.725424859373682 C -70.76104394667426 9.375582306909742, -241.23769062206668 -330.3489882107068, -202.25424859373686 -146.94631307311826 C -388.7271039752881 -127.34722621043306, -12.949656472186811 -70.19496621032846, -14.69463130731183 -20.225424859373682 C -62.75771610422777 -34.007292650223654, -0.9911280170243231 -409.053902381776, -77.25424859373689 -237.76412907378838 C -239.63401180331923 -331.51412907378824, 30.78307376628289 -64.40053768033611, -4.592425496802574e-15 -25 C -30.783073766282907 -64.4005376803361, 239.63401180331905 -331.5141290737884, 77.2542485937368 -237.7641290737884 C 0.9911280170240815 -409.05390238177597, 62.757716104227754 -34.007292650223675, 14.694631307311823 -20.22542485937369 C 12.949656472186785 -70.19496621032847, 388.72710397528806 -127.34722621043332, 202.25424859373683 -146.94631307311835 C 241.2376906220665 -330.3489882107069, 70.76104394667426 9.375582306909713, 23.776412907378838 -7.725424859373692 C 51.73605808091619 -49.17730348712577, 389.33965477701145 125.4619886922859, 250 0 Z" fill="#FF0000" stroke="#000000" stroke-width="12" stroke-linejoin="round"/></g></g></g></svg>
-                            <p style="margin: 8px 0 0 0; color: #000; font-size: 10px; font-weight: bold; letter-spacing: 2px;">EDITION No. 03</p>
-                        </td>
-                    </tr>
+            <main id="main">
 
-                    <!-- Navigation Bar -->
-                    <tr>
-                        <td class="content-padding" style="padding: 10px 30px; border-bottom: 1px solid #000; background-color: #fafafa; text-align: center;">
-                            <a href="../index.html" style="color: #000; font-size: 11px; font-weight: bold; text-decoration: underline; letter-spacing: 1px;">← BACK TO ARCHIVE</a>
-                        </td>
-                    </tr>
+                <div class="edition-mark">
+                    <svg class="seal-svg" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+                    <use href="#seal-september-1"></use>
+                    </svg>
+                    <p class="edition-number">EDITION No. 03</p>
+                </div>
 
-                    <!-- Intro -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0; color: #000; font-size: 13px; line-height: 1.8; text-align: center;">Finding the genuinely interesting acts amid all the spectacle. Creating an intentional curation in a sea of noise.</p>
-                        </td>
-                    </tr>
+                <nav class="back-bar" aria-label="Edition navigation">
+                    <a href="../index.html">← BACK TO ARCHIVE</a>
+                    <div class="archive-tools">
+                        <button type="button" class="bar-btn" data-search-open aria-haspopup="dialog">SEARCH <kbd>/</kbd></button>
+                        <button type="button" class="bar-btn" data-theme-toggle aria-label="Colour theme: auto">AUTO</button>
+                    </div>
+                </nav>
+                <nav class="edition-nav" data-edition-nav aria-label="Other editions"></nav>
 
-                    <!-- Long Read -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">LONG READ</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://ordinaryabundance.com/?ueid=700e7a19033b3e05077d537e4201fb84&utm_source=Sailthru&utm_medium=email&utm_campaign=2026-08-15%20Installer%20140&utm_term=Installer" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Ordinary Abundance</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A nice, relaxing walk through inventions that changed daily life for humanity.</p>
-                        </td>
-                    </tr>
+                <div class="lede">
+                    <p>Finding the genuinely interesting acts amid all the spectacle. Creating an intentional curation in a sea of noise.</p>
+                </div>
 
-                    <!-- Book -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">BOOK</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://www.goodreads.com/en/book/show/43306206-the-courage-to-be-disliked" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">The Courage to Be Disliked</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">I read this book in the airport and the plane on the way back from Copenhagen this year. A dialogue between a philosopher and a young man exploring Adlerian psychology. A very accessible, easily digestible approach to Adlerian principles.</p>
-                        </td>
-                    </tr>
+        <section class="section reveal">
+            <p class="eyebrow">LONG READ</p>
+            <h2 class="section-title"><a href="https://ordinaryabundance.com/?ueid=700e7a19033b3e05077d537e4201fb84&amp;utm_source=Sailthru&amp;utm_medium=email&amp;utm_campaign=2026-08-15%20Installer%20140&amp;utm_term=Installer" rel="noopener noreferrer" target="_blank">Ordinary Abundance</a></h2>
+            <p class="copy">A nice, relaxing walk through inventions that changed daily life for humanity.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">BOOK</p>
+            <h2 class="section-title"><a href="https://www.goodreads.com/en/book/show/43306206-the-courage-to-be-disliked" rel="noopener noreferrer" target="_blank">The Courage to Be Disliked</a></h2>
+            <p class="copy">I read this book in the airport and the plane on the way back from Copenhagen this year. A dialogue between a philosopher and a young man exploring Adlerian psychology. A very accessible, easily digestible approach to Adlerian principles.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">WATCH</p>
+            <h2 class="section-title"><a href="https://youtu.be/oAHbLRjF0vo?si=ZSr6WxQQoqIDxbMb" rel="noopener noreferrer" target="_blank">
+                                    The Fastest Way to Board a Plane Feels Like the Slowest</a></h2>
+            <p class="copy">Honestly, every CGP Grey video could have been here. This one is fun and explains a great solution to a very mundane problem.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">APP</p>
+            <h2 class="section-title">Compression &amp; Sunlight Tracking: <a href="https://lowtechguys.com/clop/" rel="noopener noreferrer" target="_blank">Clop (Mac)</a> &amp; <a href="https://apps.apple.com/hr/app/sun-day-tracker/id6748545544" rel="noopener noreferrer" target="_blank">Sun Day Tracker (iPhone)</a></h2>
+            <p class="copy">On Mac, Clop is an intelligent image compression tool. Drop images and watch it optimize them without losing quality—simple, fast, and actually useful.<br/><br/>On iPhone, Sun Day Tracker is an app made by Jack Dorsey (the founder of Twitter). It helps you track daylight hours and measure the amount of vitamin D intake in your day (one of the most important things is getting enough sunlight!!!)</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">NEWS</p>
+            <h2 class="section-title"><a href="https://www.reuters.com/legal/litigation/revolut-confirms-sensitive-customer-data-breach-falling-fake-government-requests-2026-09-12/" rel="noopener noreferrer" target="_blank">Revolut Confirms Sensitive Customer Data Breach</a></h2>
+            <p class="copy">The fintech company disclosed a significant data breach affecting customer information after falling for fake government requests. Another reminder that no company, no matter how tech-forward, is immune to social engineering. Another reminder that KYC laws easily backfire, and often times do not work at all.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">ZAGREB</p>
+            <h2 class="section-title"><a href="https://vogueadria.com/hr/pink-pig-zagreb/" rel="noopener noreferrer" target="_blank">Pink Pig Zagreb</a></h2>
+            <p class="copy">This was brought to my attention by a friend (J) and this article shows the atmosphere really well. Read the story about Maki and her approach to food and sharing her tradition. I will try to book this some time in the near future.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">CROATIA</p>
+            <h2 class="section-title"><a href="https://www.croatiaweek.com/croatian-drone-company-orqa-us-army-fpv-drones/" rel="noopener noreferrer" target="_blank">Croatian Drone Company Orqa and US Army FPV Drones</a></h2>
+            <p class="copy">A Croatian tech success story. Orqa is making waves in the FPV drone space. We produce drones for an invantry division of the US Army. Kind of crazy to say, at least to me.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">TECH</p>
+            <h2 class="section-title"><a href="https://moviescenemap.com/" rel="noopener noreferrer" target="_blank">Movie Scene Map</a></h2>
+            <p class="copy">A great fucking idea. Please scroll through Croatia and the region.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">MISC</p>
+            <h2 class="section-title"><a href="https://www.cold-takes.com/learning-by-writing/" rel="noopener noreferrer" target="_blank">Learning by Writing</a></h2>
+            <p class="copy">A reflection on how the act of writing clarifies thinking. You don't really know what you think until you try to write it down. Useful for anyone trying to make sense of the world.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">QUOTE</p>
+            <blockquote class="quote"><p>"This was the closest I've been to facing death, and I hope it's the closest I get for a few more decades. Having lived through it, I can now say this to you with a bit more certainty than when death was a useful, but purely intellectual concept. No one wants to die. Even people who want to go to heaven don't want to die to get there. Yet, death is the destination we all share. No one has ever escaped it, and that is as it should be because death is very likely the single best invention of life. It's life's change agent. It clears out the old to make way for the new. Right now, the new is you, but someday not too long from now, you will gradually become the old and be cleared away. Sorry to be so dramatic, but it's quite true. Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma, which is living with the results of other people's thinking. Don't let the noise of others opinions drowned out your own inner voice, and most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary."</p></blockquote>
+            <p class="quote-attribution">— Steve Jobs</p>
+        </section>
 
-                    <!-- Watch -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">WATCH</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://youtu.be/oAHbLRjF0vo?si=ZSr6WxQQoqIDxbMb" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">
-                                    The Fastest Way to Board a Plane Feels Like the Slowest</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">Honestly, every CGP Grey video could have been here. This one is fun and explains a great solution to a very mundane problem.</p>
-                        </td>
-                    </tr>
+            </main>
 
-                    <!-- App -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">APP</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                Compression &amp; Sunlight Tracking: <a href="https://lowtechguys.com/clop/" style="color: #000; text-decoration: underline;" target="_blank" rel="noopener noreferrer">Clop (Mac)</a> &amp; <a href="https://apps.apple.com/hr/app/sun-day-tracker/id6748545544" style="color: #000; text-decoration: underline;" target="_blank" rel="noopener noreferrer">Sun Day Tracker (iPhone)</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">On Mac, Clop is an intelligent image compression tool. Drop images and watch it optimize them without losing quality—simple, fast, and actually useful.<br><br>On iPhone, Sun Day Tracker is an app made by Jack Dorsey (the founder of Twitter). It helps you track daylight hours and measure the amount of vitamin D intake in your day (one of the most important things is getting enough sunlight!!!)</p>
-                        </td>
-                    </tr>
+            <footer class="site-footer">
+                <p>
+                    have something cool? send me a text <br/><span class="accent">stay hungry, stay foolish</span>
+                </p>
+            </footer>
 
-                    <!-- News -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">NEWS</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://www.reuters.com/legal/litigation/revolut-confirms-sensitive-customer-data-breach-falling-fake-government-requests-2026-09-12/" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Revolut Confirms Sensitive Customer Data Breach</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">The fintech company disclosed a significant data breach affecting customer information after falling for fake government requests. Another reminder that no company, no matter how tech-forward, is immune to social engineering. Another reminder that KYC laws easily backfire, and often times do not work at all.</p>
-                        </td>
-                    </tr>
-
-                    <!-- Zagreb -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">ZAGREB</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://vogueadria.com/hr/pink-pig-zagreb/" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Pink Pig Zagreb</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">This was brought to my attention by a friend (J) and this article shows the atmosphere really well. Read the story about Maki and her approach to food and sharing her tradition. I will try to book this some time in the near future.</p>
-                        </td>
-                    </tr>
-
-                    <!-- Croatia -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">CROATIA</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://www.croatiaweek.com/croatian-drone-company-orqa-us-army-fpv-drones/" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Croatian Drone Company Orqa and US Army FPV Drones</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A Croatian tech success story. Orqa is making waves in the FPV drone space. We produce drones for an invantry division of the US Army. Kind of crazy to say, at least to me. </p>
-                        </td>
-                    </tr>
-
-                    <!-- Tech -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">TECH</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://moviescenemap.com/" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Movie Scene Map</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A great fucking idea. Please scroll through Croatia and the region. </p>
-                        </td>
-                    </tr>
-
-                    <!-- Misc -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">MISC</p>
-                            <h3 style="margin: 8px 0 6px 0; color: #000; font-size: 15px; font-weight: bold; font-family: Georgia, serif;">
-                                <a href="https://www.cold-takes.com/learning-by-writing/" style="color: #000; text-decoration: none;" target="_blank" rel="noopener noreferrer">Learning by Writing</a>
-                            </h3>
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.7;">A reflection on how the act of writing clarifies thinking. You don't really know what you think until you try to write it down. Useful for anyone trying to make sense of the world.</p>
-                        </td>
-                    </tr>
-
-                    <!-- Quote -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-bottom: 1px solid #000;">
-                            <p style="margin: 0 0 5px 0; color: #d32f2f; font-size: 11px; font-weight: bold; letter-spacing: 1px;">QUOTE</p>
-                            <p style="margin: 8px 0 0 0; color: #000; font-size: 12px; line-height: 1.7; font-style: italic;">
-                                "This was the closest I've been to facing death, and I hope it's the closest I get for a few more decades. Having lived through it, I can now say this to you with a bit more certainty than when death was a useful, but purely intellectual concept. No one wants to die. Even people who want to go to heaven don't want to die to get there. Yet, death is the destination we all share. No one has ever escaped it, and that is as it should be because death is very likely the single best invention of life. It's life's change agent. It clears out the old to make way for the new. Right now, the new is you, but someday not too long from now, you will gradually become the old and be cleared away. Sorry to be so dramatic, but it's quite true. Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma, which is living with the results of other people's thinking. Don't let the noise of others opinions drowned out your own inner voice, and most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary."
-                            </p>
-                            <p style="margin: 5px 0 0 0; color: #666; font-size: 11px; font-weight: bold;">— Steve Jobs</p>
-                        </td>
-                    </tr>
-
-                    <!-- Footer -->
-                    <tr>
-                        <td class="content-padding" style="padding: 20px 30px; border-top: 2px solid #000; text-align: center;">
-                            <p style="margin: 0; color: #000; font-size: 12px; line-height: 1.8;">have something cool? send me a text <br><span style="color: #d32f2f;">stay hungry, stay foolish</span></p>
-                        </td>
-                    </tr>
-
-                </table>
-
-            </td>
-        </tr>
-    </table>
+        </div>
+    </div>
 
 </body>
 </html>
