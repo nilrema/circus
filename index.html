@@ -167,6 +167,75 @@
                 filter: none;
             }
         }
+
+        /* Dark Mode (automatic system preference) */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0e0e0e !important;
+                color: #e6e6e6 !important;
+            }
+            table, td {
+                background-color: #0e0e0e !important;
+                color: #e6e6e6 !important;
+                border-color: #262626 !important;
+            }
+            .email-container {
+                background-color: #141414 !important;
+                border-color: #2e2e2e !important;
+            }
+            .email-container table,
+            .email-container td {
+                background-color: #141414 !important;
+                border-color: #262626 !important;
+            }
+            p {
+                color: #e6e6e6 !important;
+            }
+            p[style*="color: #555"],
+            p[style*="color: #666"],
+            p[style*="color: #444"] {
+                color: #9a9a9a !important;
+            }
+            p[style*="color: #d32f2f"],
+            span[style*="color: #d32f2f"],
+            .seal-eyebrow {
+                color: #ff5252 !important;
+            }
+            h3, h3 a, a {
+                color: #f0f0f0 !important;
+            }
+            .edition-link:hover {
+                background-color: #1c1c1c !important;
+            }
+            .edition-link:hover td {
+                background-color: #1c1c1c !important;
+            }
+            .seal-title {
+                color: #f0f0f0 !important;
+            }
+            .seal-spine {
+                background-color: #ffffff !important;
+                opacity: 0.12 !important;
+            }
+            /* Spinning circular header in dark mode */
+            .svg-container circle[stroke="#000"] {
+                stroke: #e6e6e6 !important;
+            }
+            .svg-container circle[fill="#fff"] {
+                fill: #141414 !important;
+            }
+            .svg-container .main-title {
+                fill: #f0f0f0 !important;
+            }
+            .svg-container textPath {
+                fill: #ff5252 !important;
+            }
+            /* Archive bar in index */
+            div[style*="background-color: #000"] {
+                background-color: #000 !important;
+                border-bottom: 1px solid #262626;
+            }
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; background-color: #fff;">
