@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            var mode = 'system';
+            try { mode = localStorage.getItem('circus-theme') || 'system'; } catch (e) {}
+            var dark = mode === 'dark' ||
+                (mode === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            d.setAttribute('data-theme', dark ? 'dark' : 'light');
+            d.setAttribute('data-theme-mode', mode);
+            window.setTimeout(function () {
+                if (!d.hasAttribute('data-js-ready')) { d.classList.remove('js'); }
+            }, 2000);
+        })();
+    </script>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
+    <title>#06 — China, brain rot, and regrets of the dying — The Circus</title>
+    <meta name="description" content="October 2026 edition of The Circus: China, brain rot, and regrets of the dying. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/styles.css?v=20261031a">
+    <script src="../assets/site.js?v=20261031a" defer></script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="The Circus">
+    <meta property="og:title" content="#06 — China, brain rot, and regrets of the dying">
+    <meta property="og:description" content="October 2026 edition of The Circus: China, brain rot, and regrets of the dying. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="#06 — China, brain rot, and regrets of the dying">
+    <meta name="twitter:description" content="October 2026 edition of The Circus: China, brain rot, and regrets of the dying. Long reads, books, films, apps, tech, and Zagreb finds.">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <svg class="seal-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="seal-october-2" viewBox="0 0 1000 1000"><g transform="translate(500 500) scale(1.15946) translate(-500 -500)"><g transform="translate(500, 500) rotate(140)"><g transform="scale(1.3)"><g transform="rotate(0) scale(1)"><path d="M 245 0 C 265 -170, 170.7100622697214 -7.620671877717633, 66.57395614066074 21.631189606246316 C 133.62802294472772 106.50611007770078, 114.46601061964064 293.2959809012465, 198.20916362186213 144.00738681165592 C 314.3129963990815 18.230202813764294, 142.58666002929255 94.1756039624432, 41.14496766047312 56.63118960624632 C 45.50462070429886 164.70983423753998, -79.79010426081501 304.56286586195677, 75.70916362186213 233.0088464923126 C 243.56911127953717 199.4970877744746, 60.00000000000001 160, 4.2862637970157365e-15 70 C -59.99999999999999 160, -243.56911127953717 199.49708777447466, -75.7091636218621 233.00884649231264 C 79.79010426081507 304.56286586195677, -45.50462070429883 164.70983423753998, -41.144967660473114 56.63118960624632 C -142.58666002929255 94.1756039624432, -314.3129963990815 18.23020281376435, -198.2091636218621 144.00738681165595 C -114.4660106196406 293.2959809012465, -133.62802294472772 106.50611007770081, -66.57395614066074 21.631189606246327 C -170.7100622697214 -7.620671877717605, -265 -169.99999999999997, -245 3.0003846579110155e-14 C -265 170.00000000000003, -170.71006226972142 7.620671877717655, -66.57395614066075 -21.63118960624631 C -133.62802294472775 -106.50611007770078, -114.46601061964066 -293.2959809012464, -198.20916362186213 -144.0073868116559 C -314.3129963990815 -18.230202813764265, -142.58666002929257 -94.17560396244318, -41.14496766047313 -56.631189606246316 C -45.50462070429888 -164.70983423753995, 79.790104260815 -304.56286586195677, -75.70916362186215 -233.0088464923126 C -243.5691112795372 -199.4970877744746, -60.00000000000003 -160, -1.2858791391047208e-14 -70 C 59.99999999999997 -160, 243.56911127953714 -199.4970877744747, 75.70916362186207 -233.00884649231264 C -79.7901042608151 -304.56286586195677, 45.504620704298816 -164.70983423754, 41.14496766047311 -56.63118960624633 C 142.58666002929252 -94.17560396244325, 314.3129963990815 -18.230202813764407, 198.2091636218621 -144.00738681165598 C 114.46601061964057 -293.2959809012465, 133.6280229447277 -106.50611007770084, 66.57395614066074 -21.631189606246338 C 170.71006226972142 7.620671877717584, 265.00000000000006 169.99999999999994, 245 -6.000769315822031e-14 Z"/></g></g></g></g></symbol>
+</svg>
+
+    <div class="page">
+        <div class="container">
+            <div class="shell">
+                <aside class="rail">
+
+            <header class="masthead">
+                <svg class="masthead-svg" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <circle class="masthead-ring" cx="150" cy="150" r="140" stroke-width="3"/>
+                    <circle class="masthead-ring masthead-ring--inner" cx="150" cy="150" r="80" stroke-width="2"/>
+                    <circle class="masthead-disc" cx="150" cy="150" r="70"/>
+
+                    <g class="spinning-ring">
+                        <defs>
+                            <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
+                            <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
+                        </defs>
+
+                        <text class="masthead-arc">
+                            <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
+                                LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
+                            </textPath>
+                        </text>
+
+                        <text class="masthead-arc">
+                            <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
+                                NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
+                            </textPath>
+                        </text>
+                    </g>
+
+                    <g class="wordmark">
+                        <text class="masthead-word" x="150" y="145" text-anchor="middle">THE</text>
+                        <text class="masthead-word" x="150" y="170" text-anchor="middle">CIRCUS</text>
+                    </g>
+                </svg>
+            </header>
+
+                <a class="rail-back" href="../index.html">← BACK TO ARCHIVE</a>
+                <nav class="edition-nav" data-edition-nav aria-label="Other editions"></nav>
+                    <div class="rail-foot">
+                        <button type="button" class="bar-btn" data-search-open aria-haspopup="dialog">SEARCH <kbd>/</kbd></button>
+                        <button type="button" class="bar-btn" data-theme-toggle aria-label="Colour theme: auto">AUTO</button>
+                    </div>
+                <p class="rail-colophon">EST. 2026 · ZAGREB</p>
+                </aside>
+
+                <div class="content">
+
+            <h1 class="visually-hidden">The Circus — #06 — China, brain rot, and regrets of the dying</h1>
+
+            <main id="main">
+
+                <div class="edition-mark">
+                    <svg class="seal-svg" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+                    <use href="#seal-october-2"></use>
+                    </svg>
+                    <p class="edition-number">EDITION No. 06 · OCTOBER 2</p>
+                </div>
+
+                <div class="lede">
+                    <p>October, part two. The same sea of noise, with a few more things worth fishing out.</p>
+                </div>
+
+            <div class="sections">
+        <section class="section reveal">
+            <p class="eyebrow">LONG READ</p>
+            <h2 class="section-title"><a href="https://www.worksinprogress.news/p/how-china-became-rich" rel="noopener noreferrer" target="_blank">How China became rich</a></h2>
+            <p class="copy">A piece on how China went from poor to rich, and what actually drove the growth. Notice how their governments are run like businesses.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">BOOK READ</p>
+            <h2 class="section-title"><a href="https://www.penguinrandomhouse.com/books/598780/top-five-regrets-of-the-dying-by-bronnie-ware/" rel="noopener noreferrer" target="_blank">Top Five Regrets of the Dying — Bronnie Ware</a></h2>
+            <p class="copy">A palliative nurse's account of what people wished they had done differently at the end of their lives. The book gets too spirital near the end and that's generally not my cup of tea, but it's still a good read. Alternatively, just google the top five things.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">WATCH</p>
+            <h2 class="section-title"><a href="https://youtu.be/uXC7OuCas2Q?si=PenHeU-Sc6E9prfu" rel="noopener noreferrer" target="_blank">How to Avoid AI Brain Rot</a></h2>
+            <p class="copy">A talk by Miles Cranmer on using AI to extend your thinking instead of replacing it. This one is for Mateo.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">APP · MAC / IPHONE</p>
+            <h2 class="section-title">Google AI Edge Foresight (Mac) &amp; Crumbs (iPhone)</h2>
+            <p class="copy">Mac: <a href="https://developers.google.com/edge/foresight" rel="noopener noreferrer" target="_blank">Google AI Edge Foresight</a>. A Mac app from Google that uses its model to locally transcribe audio. Horrible naming, though. iPhone: <a href="https://apps.apple.com/hr/app/crumbs-spasi-hranu/id6504109863?l=hr" rel="noopener noreferrer" target="_blank">Crumbs: Spasi hranu</a>. A local app that helps rescue surplus food from restaurants and bakeries across Zagreb at a discount before it goes to waste.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">NEWS</p>
+            <h2 class="section-title"><a href="https://www.nobelprize.org/prizes/medicine/2026/press-release/" rel="noopener noreferrer" target="_blank">The Nobel Prize in Physiology or Medicine 2026 — Press release</a></h2>
+            <p class="copy">A lot to choose from this month. The “protests” in Milan/Paris, politics etc. My lady told me about this, though. This year's prize goes to work on using light to manipulate neurons in the brain.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">ZAGREB</p>
+            <h2 class="section-title"><a href="https://www.poslovni.hr/kompanije/ing-grad-s-allegheny-park-residenceom-usuglasio-ugovor-vrijedan-50-milijuna-eura-4560870" rel="noopener noreferrer" target="_blank">Ing-Grad and Allegheny Park Residence build a new tower complex</a></h2>
+            <p class="copy">Ing-Grad has agreed the key terms of a roughly €50 million contract to build the first tower of the Allegheny Park residential complex in Zagreb. The renders look nice, the number of planned apartments is absurd. These are the same investors who are building then new complex near Remiza.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">CROATIA</p>
+            <h2 class="section-title"><a href="https://www.journal.hr/lifestyle/gastro/roz-100-pizza-kava-automobili/" rel="noopener noreferrer" target="_blank">Rož 100: pizza, kava, automobili</a></h2>
+            <p class="copy">A veeery cool pizzeria and coffee spot near Opatija that doubles as a showroom for sexy cars.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">TECH</p>
+            <h2 class="section-title"><a href="https://expression.fire.org/p/flock-is-using-trademark-law-to-silence" rel="noopener noreferrer" target="_blank">Flock is using trademark law to silence critics</a></h2>
+            <p class="copy">FIRE on how Flock Safety, the licence-plate-reader company, has been using trademark complaints against people who criticise or map its cameras. Comically ironic - we can map you, but you cannot map us.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">MISC</p>
+            <h2 class="section-title"><a href="https://www.jkrowling.com/opinions/an-update-to-my-essay-of-june-2020/" rel="noopener noreferrer" target="_blank">J.K. Rowling follow-up essay</a></h2>
+            <p class="copy">J.K. Rowling's has been uniquely positioned to defend the right to freedom of speech. I am glad she is also uniquely positioned to defend women's rights, too.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">QUOTE</p>
+            <blockquote class="quote"><p>“Aristotle said that some people were only fit to be slaves. I do not contradict him. But I reject slavery because I see no men fit to be masters.”</p></blockquote>
+            <p class="quote-attribution">— C.S. Lewis</p>
+        </section>
+            </div>
+
+            </main>
+
+            <footer class="site-footer">
+                <p>
+                    have something cool? send me a text <br/><span class="accent">stay hungry, stay foolish</span>
+                </p>
+            </footer>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

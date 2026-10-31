@@ -14,6 +14,7 @@
 
     // Newest first.
     var EDITIONS = [
+        { file: "october-2026-2.html", title: "#06 — China, brain rot, and regrets of the dying", month: "October 2026", number: 6 },
         { file: "october-2026-1.html", title: "#05 — High Agency, Basic Economics & Maksimir", month: "Mid October 2026", number: 5 },
         { file: "september-2026-2.html", title: "#04 — Politics, economics, babies.", month: "September 2026", number: 4 },
         { file: "september-2026-1.html", title: "#03 — Adler, movie maps and a very cool restaurant.", month: "Mid September 2026", number: 3 },
