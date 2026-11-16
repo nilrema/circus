@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            var mode = 'system';
+            try { mode = localStorage.getItem('circus-theme') || 'system'; } catch (e) {}
+            var dark = mode === 'dark' ||
+                (mode === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            d.setAttribute('data-theme', dark ? 'dark' : 'light');
+            d.setAttribute('data-theme-mode', mode);
+            window.setTimeout(function () {
+                if (!d.hasAttribute('data-js-ready')) { d.classList.remove('js'); }
+            }, 2000);
+        })();
+    </script>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
+    <title>#07 — Never enough hope — The Circus</title>
+    <meta name="description" content="November 2026 edition of The Circus: Never enough hope. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/styles.css?v=20261031a">
+    <script src="../assets/site.js?v=20261031a" defer></script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="The Circus">
+    <meta property="og:title" content="#07 — Never enough hope">
+    <meta property="og:description" content="November 2026 edition of The Circus: Never enough hope. Long reads, books, films, apps, tech, and Zagreb finds.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="#07 — Never enough hope">
+    <meta name="twitter:description" content="November 2026 edition of The Circus: Never enough hope. Long reads, books, films, apps, tech, and Zagreb finds.">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <svg class="seal-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="seal-november-1" viewBox="0 0 1000 1000"><g transform="translate(500 500) scale(1.22) translate(-500 -500)"><g transform="translate(500, 500) rotate(77)"><g transform="scale(1.28)"><g transform="rotate(0) scale(1)"><path d="M 245 0 C 200 155, 301.1156678574917 -75.65285566808916, 112.22466892282812 36.464005336243794 C 199.14005971375906 238.19579470931149, 252.91011298032285 -7.8405836696222195, 198.20916362186213 144.00738681165592 C 70.69668476965617 242.95468458661148, 288.07532542478674 115.7869028923531, 69.35865977051184 95.4640053362438 C 21.099717281054097 309.7560361488692, 209.2171589007383 142.31366913091384, 75.70916362186213 233.0088464923126 C -85.61036115075929 238.10893738714756, 165.00000000000003 263, 7.225416114969383e-15 118 C -164.99999999999997 263, 85.61036115075935 238.10893738714756, -75.7091636218621 233.00884649231264 C -209.2171589007383 142.3136691309139, -21.099717281054097 309.7560361488692, -69.35865977051182 95.4640053362438 C -288.07532542478674 115.78690289235311, -70.69668476965613 242.95468458661148, -198.2091636218621 144.00738681165595 C -252.91011298032282 -7.840583669622191, -199.14005971375906 238.1957947093115, -112.22466892282812 36.46400533624381 C -301.1156678574917 -75.65285566808913, -199.99999999999997 155.00000000000003, -245 3.0003846579110155e-14 C -200.00000000000003 -154.99999999999997, -301.1156678574917 75.65285566808922, -112.22466892282813 -36.46400533624378 C -199.14005971375911 -238.19579470931149, -252.91011298032282 7.840583669622248, -198.20916362186213 -144.0073868116559 C -70.69668476965619 -242.95468458661145, -288.0753254247868 -115.78690289235308, -69.35865977051185 -95.46400533624379 C -21.099717281054154 -309.75603614886927, -209.2171589007383 -142.31366913091384, -75.70916362186215 -233.0088464923126 C 85.61036115075927 -238.10893738714756, -165.00000000000006 -262.99999999999994, -2.167624834490815e-14 -118 C 164.99999999999994 -263.00000000000006, -85.61036115075936 -238.10893738714753, 75.70916362186207 -233.00884649231264 C 209.21715890073827 -142.31366913091392, 21.099717281054012 -309.75603614886927, 69.3586597705118 -95.46400533624382 C 288.0753254247867 -115.78690289235318, 70.69668476965612 -242.9546845866115, 198.2091636218621 -144.00738681165598 C 252.91011298032285 7.840583669622163, 199.140059713759 -238.19579470931154, 112.22466892282812 -36.46400533624382 C 301.11566785749176 75.65285566808909, 199.99999999999997 -155.00000000000006, 245 -6.000769315822031e-14 Z"/></g></g></g></g></symbol>
+</svg>
+
+    <div class="page">
+        <div class="container">
+            <div class="shell">
+                <aside class="rail">
+
+            <header class="masthead">
+                <svg class="masthead-svg" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <circle class="masthead-ring" cx="150" cy="150" r="140" stroke-width="3"/>
+                    <circle class="masthead-ring masthead-ring--inner" cx="150" cy="150" r="80" stroke-width="2"/>
+                    <circle class="masthead-disc" cx="150" cy="150" r="70"/>
+
+                    <g class="spinning-ring">
+                        <defs>
+                            <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
+                            <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
+                        </defs>
+
+                        <text class="masthead-arc">
+                            <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
+                                LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
+                            </textPath>
+                        </text>
+
+                        <text class="masthead-arc">
+                            <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
+                                NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
+                            </textPath>
+                        </text>
+                    </g>
+
+                    <g class="wordmark">
+                        <text class="masthead-word" x="150" y="145" text-anchor="middle">THE</text>
+                        <text class="masthead-word" x="150" y="170" text-anchor="middle">CIRCUS</text>
+                    </g>
+                </svg>
+            </header>
+
+                <a class="rail-back" href="../index.html">← BACK TO ARCHIVE</a>
+                <nav class="edition-nav" data-edition-nav aria-label="Other editions"></nav>
+                    <div class="rail-foot">
+                        <button type="button" class="bar-btn" data-search-open aria-haspopup="dialog">SEARCH <kbd>/</kbd></button>
+                        <button type="button" class="bar-btn" data-theme-toggle aria-label="Colour theme: auto">AUTO</button>
+                    </div>
+                <p class="rail-colophon">EST. 2026 · ZAGREB</p>
+                </aside>
+
+                <div class="content">
+
+            <h1 class="visually-hidden">The Circus — #07 — Never enough hope</h1>
+
+            <main id="main">
+
+                <div class="edition-mark">
+                    <svg class="seal-svg" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+                    <use href="#seal-november-1"></use>
+                    </svg>
+                    <p class="edition-number">EDITION No. 07 · NOVEMBER 1</p>
+                </div>
+
+            <div class="sections">
+        <section class="section reveal">
+            <p class="eyebrow">LONG READ</p>
+            <h2 class="section-title"><a href="https://en.wikisource.org/wiki/Industrial_Society_and_Its_Future" rel="noopener noreferrer" target="_blank">Industrial Society and Its Future</a></h2>
+            <p class="copy">The manifesto of the famous Unabomber. I disagree with many things in this, but also agree with many. You always demonize the villains, but forget how intelligent they can be.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">BOOK READ</p>
+            <h2 class="section-title"><a href="https://www.goodreads.com/en/book/show/11297.Norwegian_Wood" rel="noopener noreferrer" target="_blank">Norwegian Wood — Haruki Murakami</a></h2>
+            <p class="copy">Very basic, I know, I know. But since this has become a bi-weekly post, I have to pull one from the archives as I didn't have time to complete the current book I am reading :)</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">WATCH</p>
+            <h2 class="section-title"><a href="https://youtu.be/FBeMrUWX73s?si=JiqKBLOTUPcvNV95&t=1" rel="noopener noreferrer" target="_blank">An NYC photo mystery</a></h2>
+            <p class="copy">I have been following this mystery for about a year now. Recently Rainbolt finally posted the full story. Never in a million years would I have guessed which video solved the mistery.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">APP · MAC</p>
+            <h2 class="section-title"><a href="https://www.todoist.com/" rel="noopener noreferrer" target="_blank">Todoist · Mac and iPhone</a></h2>
+            <p class="copy">Usually I'm not the person to reinvent the wheel when it comes to productivity apps, as Apple or Google or someone pretty much always has a good enough solution. But Todoist kind of grew on me. I use it for work and personal tasks now and it has become my go-to app for task management. Love the board view.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">NEWS</p>
+            <h2 class="section-title"><a href="https://humanprogress.org/doomslayer-hiv-drug-drones-housing-deregulation/" rel="noopener noreferrer" target="_blank">Doomslayer: HIV drug, drones, housing deregulation</a></h2>
+            <p class="copy">Not really a single piece of news, but a collection for people who think nothing good happens in the world. This is from a newsletter I am subscribed too. The whole Human Progress org does great work.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">ZAGREB</p>
+            <h2 class="section-title"><a href="https://www.journal.hr/lifestyle/gastro/croasan-zagreb/" rel="noopener noreferrer" target="_blank">Croasan Zagreb</a></h2>
+            <p class="copy">This might motivate my lady to at least open the next newsletter edition.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">CROATIA</p>
+            <h2 class="section-title"><a href="https://www.croatiaweek.com/99-year-old-dubrovnik-man-returns-to-university/" rel="noopener noreferrer" target="_blank">99-year-old Dubrovnik man returns to university</a></h2>
+            <p class="copy">Never too late, right? If this grandpa can do it, you can do great things too.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">TECH</p>
+            <h2 class="section-title"><a href="https://hackertube.org/" rel="noopener noreferrer" target="_blank">HackerTube</a></h2>
+            <p class="copy">The nerds reading this will know about HackerNews. Karpathy (google the master) asked Claude to make him a YouTube made entirely of videos recommended by HackerNews threads. This is good food for the brain.</p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">MISC</p>
+            <h2 class="section-title"><a href="https://www.jackfriks.com/keep-going" rel="noopener noreferrer" target="_blank">Keep Going</a></h2>
+            <p class="copy">To complete the positive note of this edition, this is a page dedicated solely to hopium. </p>
+        </section>
+        <section class="section reveal">
+            <p class="eyebrow">QUOTE</p>
+            <blockquote class="quote"><p>“The way you vote, the way you live, the way you protest, the pressure you bring to bear on your government, has an impact way beyond your borders. That is your privilege, and your burden.<br><br>If you choose to use your status and influence to raise your voice on behalf of those who have no voice; if you choose to identify not only with the powerful, but with the powerless; if you retain the ability to imagine yourself into the lives of those who do not have your advantages, then it will not only be your proud families who celebrate your existence, but thousands and millions of people whose reality you have helped change. We do not need magic to change the world, we carry all the power we need inside ourselves already: we have the power to imagine better.”</p></blockquote>
+            <p class="quote-attribution">— J.K. Rowling</p>
+        </section>
+            </div>
+
+            </main>
+
+            <footer class="site-footer">
+                <p>
+                    have something cool? send me a text <br/><span class="accent">stay hungry, stay foolish</span>
+                </p>
+            </footer>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
