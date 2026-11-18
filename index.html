@@ -24,8 +24,8 @@
     <title>THE CIRCUS — editions archive</title>
     <meta name="description" content="The Circus is a monthly curation of long reads, books, films, apps, tech, and Zagreb finds — intentional picks in a sea of noise.">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="assets/styles.css?v=20261031a">
-    <script src="assets/site.js?v=20261031a" defer></script>
+    <link rel="stylesheet" href="assets/styles.css?v=20261118f">
+    <script src="assets/site.js?v=20261118b" defer></script>
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Circus">
@@ -87,6 +87,15 @@
             </header>
 
                 <p class="rail-desc">A monthly curation of long reads, books, films, apps, tech, and Zagreb finds.</p>
+                <nav class="stream-links" aria-label="The Circus streams">
+                    <a href="#editions-archive" aria-current="page">EDITIONS</a>
+                    <a href="cvarci.html">ČVARCI</a>
+                </nav>
+                <section class="cvarci-sidebar-teaser" aria-label="Latest čvarak">
+                    <p class="eyebrow">LATEST ČVARAK</p>
+                    <p class="cvarci-sidebar-latest"><a href="cvarci.html"><span class="cvarak-index">05</span>Heuristics That Almost Always Work</a></p>
+                    <a class="cvarci-more" href="cvarci.html">OPEN ČVARCI →</a>
+                </section>
                     <div class="rail-foot">
                         <button type="button" class="bar-btn" data-search-open aria-haspopup="dialog">SEARCH <kbd>/</kbd></button>
                         <button type="button" class="bar-btn" data-theme-toggle aria-label="Colour theme: auto">AUTO</button>
@@ -124,7 +133,7 @@
                 </svg>
             </section>
 
-            <div class="archive-bar">
+            <div class="archive-bar" id="editions-archive">
                 <h2>EDITIONS ARCHIVE</h2>
                 <div class="archive-tools">
                     <div class="view-toggle" role="group" aria-label="Archive view">

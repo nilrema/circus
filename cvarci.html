@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            var mode = 'system';
+            try { mode = localStorage.getItem('circus-theme') || 'system'; } catch (e) {}
+            var dark = mode === 'dark' ||
+                (mode === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            d.setAttribute('data-theme', dark ? 'dark' : 'light');
+            d.setAttribute('data-theme-mode', mode);
+            window.setTimeout(function () {
+                if (!d.hasAttribute('data-js-ready')) { d.classList.remove('js'); }
+            }, 2000);
+        })();
+    </script>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
+    <title>Čvarci — The Circus</title>
+    <meta name="description" content="Weekly reading bites, short stories, and small things worth keeping from The Circus.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="assets/styles.css?v=20261118f">
+    <script src="assets/site.js?v=20261118b" defer></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Circus">
+    <meta property="og:title" content="Čvarci — The Circus">
+    <meta property="og:description" content="Weekly reading bites, short stories, and small things worth keeping from The Circus.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Čvarci — The Circus">
+    <meta name="twitter:description" content="Weekly reading bites, short stories, and small things worth keeping from The Circus.">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page">
+        <div class="container">
+            <div class="shell">
+                <aside class="rail">
+            <header class="masthead">
+                <svg class="masthead-svg" width="220" height="220" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <circle class="masthead-ring masthead-ring--outer" cx="150" cy="150" r="140" stroke-width="3"/>
+                    <circle class="masthead-ring masthead-ring--inner" cx="150" cy="150" r="80" stroke-width="2"/>
+                    <circle class="masthead-disc" cx="150" cy="150" r="70"/>
+
+                    <g class="spinning-ring">
+                        <defs>
+                            <path id="topCircle" d="M 30, 150 A 120, 120 0 0, 1 270, 150" fill="none"/>
+                            <path id="bottomCircle" d="M 270, 150 A 120, 120 0 0, 1 30, 150" fill="none"/>
+                        </defs>
+
+                        <text class="masthead-arc">
+                            <textPath href="#topCircle" startOffset="50%" text-anchor="middle">
+                                LONG READ  •  BOOK  •  WATCH  •  APP  •  TECH
+                            </textPath>
+                        </text>
+
+                        <text class="masthead-arc">
+                            <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">
+                                NEWS  •  ZAGREB  •  CROATIA  •  MISC •  QUOTE
+                            </textPath>
+                        </text>
+                    </g>
+
+                    <g class="wordmark">
+                        <text class="masthead-word" x="150" y="145" text-anchor="middle">THE</text>
+                        <text class="masthead-word" x="150" y="170" text-anchor="middle">CIRCUS</text>
+                    </g>
+                </svg>
+            </header>
+                    <p class="rail-desc">Small things from the week’s reading pile.</p>
+                    <nav class="stream-links" aria-label="The Circus streams">
+                        <a href="index.html#editions-archive">EDITIONS</a>
+                        <a href="cvarci.html" aria-current="page">ČVARCI</a>
+                    </nav>
+                    <div class="rail-foot">
+                        <button type="button" class="bar-btn" data-search-open aria-haspopup="dialog">SEARCH <kbd>/</kbd></button>
+                        <button type="button" class="bar-btn" data-theme-toggle aria-label="Colour theme: auto">AUTO</button>
+                    </div>
+                    <p class="rail-colophon">WEEKLY NOTES · EST. 2026</p>
+                </aside>
+                <div class="content">
+                    <main id="main">
+                        <header class="cvarci-heading">
+                            <p class="eyebrow">SHORT READS · LINKS · THOUGHTS</p>
+                            <h1>Čvarci</h1>
+                        </header>
+                        <section class="cvarci-feed" aria-label="Weekly bites">
+                        <article class="cvarak-card reveal">
+                            <div class="cvarak-topline"><span>18 NOVEMBER 2026</span><span>PSYCHOLOGY</span></div>
+                            <h3><span class="cvarak-index">05</span><a href="https://www.astralcodexten.com/p/heuristics-that-almost-always-work" rel="noopener noreferrer" target="_blank">Heuristics That Almost Always Work</a></h3>
+                            <div class="cvarak-source"><a href="https://www.astralcodexten.com/p/heuristics-that-almost-always-work" rel="noopener noreferrer" target="_blank">ASTRAL CODEX TEN ↗</a></div>
+                        </article>
+                        <article class="cvarak-card reveal">
+                            <div class="cvarak-topline"><span>18 NOVEMBER 2026</span><span>NEWS</span></div>
+                            <h3><span class="cvarak-index">04</span><a href="https://www.nytimes.com/interactive/2026/11/16/magazine/ten-days-175-years.html?unlocked_article_code=1.RVE.GHGy.VKahM8FCPg9s&amp;smid=url-share" rel="noopener noreferrer" target="_blank">Ten Days, 175 Years</a></h3>
+                            <div class="cvarak-source"><a href="https://www.nytimes.com/interactive/2026/11/16/magazine/ten-days-175-years.html?unlocked_article_code=1.RVE.GHGy.VKahM8FCPg9s&amp;smid=url-share" rel="noopener noreferrer" target="_blank">THE NEW YORK TIMES ↗</a></div>
+                        </article>
+                        <article class="cvarak-card reveal">
+                            <div class="cvarak-topline"><span>18 NOVEMBER 2026</span><span>POLITICS</span></div>
+                            <h3><span class="cvarak-index">03</span><a href="https://www.telegraph.co.uk/news/2025/11/15/the-islamic-world-silent-on-its-history-of-slavery/?WT.mc_id=tmgoff_tw_post_on-its-history-of-slavery/" rel="noopener noreferrer" target="_blank">The Islamic World Is Silent on Its History of Slavery</a></h3>
+                            <div class="cvarak-source"><a href="https://www.telegraph.co.uk/news/2025/11/15/the-islamic-world-silent-on-its-history-of-slavery/?WT.mc_id=tmgoff_tw_post_on-its-history-of-slavery/" rel="noopener noreferrer" target="_blank">THE TELEGRAPH ↗</a></div>
+                        </article>
+                        <article class="cvarak-card reveal">
+                            <div class="cvarak-topline"><span>18 NOVEMBER 2026</span><span>SOCIAL</span></div>
+                            <h3><span class="cvarak-index">02</span><a href="https://unwall.app/www.theatlantic.com/magazine/2026/12/location-tracking-apps-parental-surveillance/689031/" rel="noopener noreferrer" target="_blank">The Parents Who Never Stop Tracking Their Kids</a></h3>
+                            <div class="cvarak-source"><a href="https://unwall.app/www.theatlantic.com/magazine/2026/12/location-tracking-apps-parental-surveillance/689031/" rel="noopener noreferrer" target="_blank">THE ATLANTIC ↗</a></div>
+                        </article>
+                        <article class="cvarak-card reveal">
+                            <div class="cvarak-topline"><span>18 NOVEMBER 2026</span><span>NEWS</span></div>
+                            <h3><span class="cvarak-index">01</span><a href="https://newsletter.humanprogress.org/p/the-brilliant-colors-of-human-progress?redirect=app-store-no-desktop&amp;inbox=true" rel="noopener noreferrer" target="_blank">The Brilliant Colors of Human Progress</a></h3>
+                            <div class="cvarak-source"><a href="https://newsletter.humanprogress.org/p/the-brilliant-colors-of-human-progress?redirect=app-store-no-desktop&amp;inbox=true" rel="noopener noreferrer" target="_blank">HUMAN PROGRESS NEWSLETTER ↗</a></div>
+                        </article>
+                        </section>
+                    </main>
+                    <footer class="site-footer">
+                        <p>have something cool? send me a text<br><span class="accent">one bite at a time</span></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
